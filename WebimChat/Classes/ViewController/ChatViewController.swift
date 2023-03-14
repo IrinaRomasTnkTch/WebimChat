@@ -95,14 +95,6 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
         return true
     }
     
-    public init() {
-        super.init()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     public func showToolbarWithHeight(_ height: CGFloat) {}
 
     // MARK: - View Life Cycle
