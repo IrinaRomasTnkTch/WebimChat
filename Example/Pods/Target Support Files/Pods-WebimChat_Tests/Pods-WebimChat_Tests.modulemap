@@ -1,0 +1,6 @@
+framework module Pods_WebimChat_Tests {
+  umbrella header "Pods-WebimChat_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "WebimChat",
+  "version": "0.1.0",
+  "summary": "A short description of WebimChat.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Ирина Ромась/WebimChat",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ирина Ромась": "romas_i@tanukitech.ru"
+  },
+  "source": {
+    "git": "https://github.com/Ирина Ромась/WebimChat.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "WebimChat/Classes/**/*"
+}

@@ -1,0 +1,16 @@
+PODS:
+  - WebimChat (0.1.0)
+
+DEPENDENCIES:
+  - WebimChat (from `../`)
+
+EXTERNAL SOURCES:
+  WebimChat:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WebimChat: 7dde48b9ef0533b2c18ecabc5f14f1485eb109e6
+
+PODFILE CHECKSUM: cb204e9d86a9cc0bb4d0fb4527513ade53f4a9ea
+
+COCOAPODS: 1.11.3
