@@ -22,7 +22,7 @@ extension UIViewController {
 //        navigationController?.popViewController(animated: true)
 //    }
     
-    static func loadViewControllerFromXib() -> Self {
+    static public func loadViewControllerFromXib() -> Self {
         let identifier = "\(Self.self)"
         return Self(nibName: identifier, bundle: nil)
     }
