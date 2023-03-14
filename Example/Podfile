@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'WebimChat_Example' do
+  pod 'WebimChat', :path => '../'
+
+  target 'WebimChat_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
