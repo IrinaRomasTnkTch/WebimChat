@@ -1,4 +1,5 @@
 import Foundation
+import WebimClientLibraryUpdated
 
 extension ChatViewController: WMDialogPopoverDelegate {
     func addQuoteReplyBar() {
@@ -29,7 +30,7 @@ extension ChatViewController: WMDialogPopoverDelegate {
     
     @objc
     func hideOverlayWindow() {
-        AppDelegate.keyboardHidden(false)
+        Settings.keyboardHidden(false)
     }
     
     func removeQuoteEditBar() {

@@ -66,7 +66,7 @@ enum AppColor {
     case feedBackStarActive
     
     // Clear
-//    case clear
+    case clear
     
     func getColor() -> UIColor {
         return AppColorPreset.getColor(style: self)
@@ -132,7 +132,7 @@ final class AppColorPreset {
 //        case .brown01:                  return UIColor(displayP3Red: 0.70,      green: 0.45,    blue: 0.00,     alpha: 1.00)
 //        case .orange:                   return UIColor(displayP3Red: 1.00,      green: 0.60,    blue: 0.20,     alpha: 0.88)
         case .feedBackStarActive:       return UIColor(displayP3Red: 1.00,      green: 0.823,   blue: 0.196,    alpha: 1)
-//        case .clear:                    return UIColor.clear
+        case .clear:                    return UIColor.clear
         }
     }
 }

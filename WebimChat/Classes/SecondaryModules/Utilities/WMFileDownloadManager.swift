@@ -40,12 +40,12 @@ class WMFileDownloadManager: NSObject {
     private var listeners = [URL: Set<DownloadListenerContainer>]()
     
     static func dropListeners() {
-        AppDelegate.checkMainThread()
+        Settings.checkMainThread()
         shared.listeners = [URL: Set<DownloadListenerContainer>]()
     }
     
     func addProgressListener(url: URL, listener: WMFileDownloadProgressListener) {
-        AppDelegate.checkMainThread()
+        Settings.checkMainThread()
         if !listeners.containsKey(keySearch: url) {
             listeners[url] = Set<DownloadListenerContainer>()
         }
@@ -53,7 +53,7 @@ class WMFileDownloadManager: NSObject {
     }
     
     func removeListener(listener: WMFileDownloadProgressListener, url: URL) {
-        AppDelegate.checkMainThread()
+        Settings.checkMainThread()
         listeners[url] = listeners[url]?.filter { $0.getValue() != nil && $0.getValue() !== listener }
     }
     
@@ -71,7 +71,7 @@ class WMFileDownloadManager: NSObject {
     }
     
     func subscribeForImage(url: URL, progressListener: WMFileDownloadProgressListener) {
-        AppDelegate.checkMainThread()
+        Settings.checkMainThread()
         let request = ImageRequest(url: url)
         if let imageContainer = ImageCache.shared[request] {
             progressListener.progressChanged(url: url, progress: 1, image: imageContainer)
@@ -87,12 +87,12 @@ class WMFileDownloadManager: NSObject {
                     if total != 0 {
                         progress = Float(completed) / Float(total)
                     }
-                    AppDelegate.checkMainThread()
+                    Settings.checkMainThread()
                     self.progressDictionary[url] = progress
                     self.sendProgressChangedEventFor(url: url, progress: progress, image: nil)
                 },
                 completion: { _ in
-                    AppDelegate.checkMainThread()
+                    Settings.checkMainThread()
                     self.sendProgressChangedEventFor(url: url, progress: 1, image: ImageCache.shared[request])
                 }
             )

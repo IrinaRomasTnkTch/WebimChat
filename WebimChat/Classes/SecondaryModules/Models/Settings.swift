@@ -84,4 +84,14 @@ final class Settings {
         }
     }
     
+    static func checkMainThread() {
+        if !Thread.isMainThread {
+#if DEBUG
+            fatalError("Not main thread error")
+#else
+            print("Not main thread error")
+#endif
+        }
+    }
+    
 }
