@@ -9,7 +9,7 @@ extension ChatViewController: SendFileCompletionHandler,
     
     // MARK: - Methods
     
-    func onSuccess(messageID: String) {
+    public func onSuccess(messageID: String) {
         // Ignored.
         // Delete visitor typing draft after message is sent.
         self.scrollToBottom(animated: true)
@@ -17,7 +17,7 @@ extension ChatViewController: SendFileCompletionHandler,
     }
     
     // SendFileCompletionHandler
-    func onFailure(messageID: String, error: SendFileError) {
+    public func onFailure(messageID: String, error: SendFileError) {
         DispatchQueue.main.async {
             var message = "Find sending unknown error".localized
             switch error {
@@ -46,7 +46,7 @@ extension ChatViewController: SendFileCompletionHandler,
     }
     
     // EditMessageCompletionHandler
-    func onFailure(messageID: String, error: EditMessageError) {
+    public func onFailure(messageID: String, error: EditMessageError) {
         DispatchQueue.main.async {
             var message = "Edit message unknown error".localized
             switch error {
@@ -73,7 +73,7 @@ extension ChatViewController: SendFileCompletionHandler,
     }
     
     // DeleteMessageCompletionHandler
-    func onFailure(messageID: String, error: DeleteMessageError) {
+    public func onFailure(messageID: String, error: DeleteMessageError) {
         DispatchQueue.main.async {
             var message = "Delete message unknown error".localized
             switch error {
@@ -96,7 +96,7 @@ extension ChatViewController: SendFileCompletionHandler,
     }
     
     // ReacionCompletionHandler
-    func onFailure(error: ReactionError) {
+    public func onFailure(error: ReactionError) {
         DispatchQueue.main.async {
             var message = "Неизвестная ошибка"
             switch error {
@@ -118,7 +118,7 @@ extension ChatViewController: SendFileCompletionHandler,
     }
     
     // SendKeyboardRequestCompletionHandler
-    func onFailure(messageID: String, error: KeyboardResponseError) {
+    public func onFailure(messageID: String, error: KeyboardResponseError) {
         DispatchQueue.main.async {
             var message = "Send keyboard request unknown error".localized
             switch error {
@@ -204,10 +204,10 @@ extension ChatViewController: FatalErrorHandlerDelegate {
 
 extension ChatViewController: NotFatalErrorHandler {
     
-    func on(error: WebimNotFatalError) {
+    public func on(error: WebimNotFatalError) {
     }
     
-    func connectionStateChanged(connected: Bool) {
+    public func connectionStateChanged(connected: Bool) {
         self.setConnectionStatus(connected: connected)
     }
 }

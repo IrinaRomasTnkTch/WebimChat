@@ -1,4 +1,5 @@
 import UIKit
+import WebimClientLibraryUpdated
 
 extension UILabel {
     static func createUILabel(

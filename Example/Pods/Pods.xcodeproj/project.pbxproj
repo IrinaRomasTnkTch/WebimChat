@@ -228,7 +228,6 @@
 		9149816F0A183F53BB9D7562DED1AA32 /* MessageHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52709CD6BD5A3A53F387042CC2B6C5C3 /* MessageHolder.swift */; };
 		91B0C163439A515C815E6C59B4EF464F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED59F947EA25C65B227D742AB2DDBA8 /* UIButton.swift */; };
 		91B3DBB40AC17FC735C39E84DA4455C0 /* fts3_tokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D608E8D63B4B100458588795BE88404 /* fts3_tokenizer.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		9379DAA7AE7E566ADAD5A17597966D13 /* ChatViewController.strings in Sources */ = {isa = PBXBuildFile; fileRef = 986C1245C9E69D01B822C01E3E838512 /* ChatViewController.strings */; };
 		93A01E14501DDDC418602290AAB639DE /* WMVisitorImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D39D0FC843D070DBF779484221484E /* WMVisitorImageCell.swift */; };
 		957F5998F06E24CEE693CE47C4C90459 /* WMOperatorMessageCell.strings in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D0E309C9B0A381A0D8E416A454DCB /* WMOperatorMessageCell.strings */; };
 		95877709DDF1306144C207E1974A7B0C /* WMNewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EB77A1807865A19B3DE05893D7F6CC /* WMNewMessageView.swift */; };
@@ -295,7 +294,6 @@
 		B99D36E025634AB8E9BE2E2DEDC74522 /* HistoryBeforeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A0F848C76D1975F7FFEF9DCDB99A9 /* HistoryBeforeResponse.swift */; };
 		B9ECEE7D68C76019B4C84BEABB58AAE7 /* WMInterfaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64CC7BEEF5D68D5215C73A99307A4F /* WMInterfaceData.swift */; };
 		BAAD41DFE73112C928AAF018D94D1874 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01F9EB90E4986E5CCA4D52CCD2D7048 /* ImageCache.swift */; };
-		BAE11C62F5A90AEE29A87D401B4DDD86 /* ChatViewController.strings in Sources */ = {isa = PBXBuildFile; fileRef = 303FA53B2D76D5CE3F6DC2E03068E2A8 /* ChatViewController.strings */; };
 		BBE7807338D8FC9F54D14684CD7BF634 /* FilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428476FECA95A99E15D9ABFF0FD1588E /* FilePicker.swift */; };
 		BD433EEC14104281CF77C9C8ED814D06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0CDFAC668AB679ECA3F26B24DA4BF7 /* SnapKit-dummy.m */; };
@@ -583,7 +581,6 @@
 		2F24FFE774F00A16B99D84011DDA9C56 /* WebimClientLibraryUpdated-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WebimClientLibraryUpdated-Info.plist"; sourceTree = "<group>"; };
 		2F90DD31E00FC83E9A54BCDBAA1152D3 /* RateStarsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RateStarsViewController.swift; sourceTree = "<group>"; };
 		303E1D8736D7AA5D3B1678B7B0319C12 /* SurveyRadioButtonViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SurveyRadioButtonViewController.xib; path = Base.lproj/SurveyRadioButtonViewController.xib; sourceTree = "<group>"; };
-		303FA53B2D76D5CE3F6DC2E03068E2A8 /* ChatViewController.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = ChatViewController.strings; path = en.lproj/ChatViewController.strings; sourceTree = "<group>"; };
 		30C0D636CEF7E83502CA3C226A2A2B72 /* CustomUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		30D96141F9C03D739D398088066B4235 /* UIAlertHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIAlertHandler.swift; sourceTree = "<group>"; };
 		31D51B100B6F4B568BF8D028C89B97E2 /* KeyboardItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardItem.swift; path = WebimClientLibrary/Backend/Items/KeyboardItem.swift; sourceTree = "<group>"; };
@@ -777,7 +774,6 @@
 		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9796C6137986C3D09140F36C265F9778 /* WMWeakReferenseContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WMWeakReferenseContainer.swift; sourceTree = "<group>"; };
 		98155CD6660048A62B1D2DE0825F985E /* LocationSettingsImpl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationSettingsImpl.swift; path = WebimClientLibrary/Implementation/LocationSettingsImpl.swift; sourceTree = "<group>"; };
-		986C1245C9E69D01B822C01E3E838512 /* ChatViewController.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = ChatViewController.strings; path = ru.lproj/ChatViewController.strings; sourceTree = "<group>"; };
 		996261B72A65C9A111B664627414289C /* StickerItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StickerItem.swift; path = WebimClientLibrary/Backend/Items/StickerItem.swift; sourceTree = "<group>"; };
 		9B19A075A5A96D5A955C8662DE8C3DCB /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Sources/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		9BA5B619D51ADCD186C64C719CFC79BA /* UITableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -2400,8 +2396,6 @@
 				348CF07E0ECAC169DA6B8E69F6AFABC5 /* BaseNibView.swift in Sources */,
 				E2A48DA4C3E4F591E46E226FD0B5B794 /* ChatFileHeaderView.swift in Sources */,
 				14FEA41381BFCEA307BE28D1E98EAA82 /* ChatHeaderView.swift in Sources */,
-				BAE11C62F5A90AEE29A87D401B4DDD86 /* ChatViewController.strings in Sources */,
-				9379DAA7AE7E566ADAD5A17597966D13 /* ChatViewController.strings in Sources */,
 				00F4B60897BA89BBA95FC52ECFFB17D2 /* ChatViewController.swift in Sources */,
 				0FF74D69BEEE65C5BF0C875300AA7105 /* ChatViewController.xib in Sources */,
 				1387B187F7856BB9E2FFB6E8A2815B1D /* ChatViewController+CompletionHandler.swift in Sources */,
@@ -2947,8 +2941,6 @@
 		BA870D22ADE6C093BEBB02286FF04CDD /* ChatViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				303FA53B2D76D5CE3F6DC2E03068E2A8 /* ChatViewController.strings */,
-				986C1245C9E69D01B822C01E3E838512 /* ChatViewController.strings */,
 				D977F95B1770E0FA9B156314661D9D8B /* ChatViewController.xib */,
 			);
 			name = ChatViewController.xib;
