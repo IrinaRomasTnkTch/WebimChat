@@ -5,7 +5,7 @@ extension ChatViewController: MessageListener {
     
     // MARK: - Methods
     
-    func added(message newMessage: Message,
+    public func added(message newMessage: Message,
                after previousMessage: Message?) {
         DispatchQueue.main.async {
             var inserted = false
@@ -34,7 +34,7 @@ extension ChatViewController: MessageListener {
         }
     }
     
-    func removed(message: Message) {
+    public func removed(message: Message) {
         DispatchQueue.main.async {
             var toUpdate = false
             if message.getCurrentChatID() == self.selectedMessage?.getCurrentChatID() {
@@ -59,7 +59,7 @@ extension ChatViewController: MessageListener {
         }
     }
     
-    func removedAllMessages() {
+    public func removedAllMessages() {
         DispatchQueue.main.async {
             self.chatMessages.removeAll()
             self.cellHeights.removeAll()
@@ -67,7 +67,7 @@ extension ChatViewController: MessageListener {
         }
     }
     
-    func changed(message oldVersion: Message,
+    public func changed(message oldVersion: Message,
                  to newVersion: Message) {
         DispatchQueue.main.async {
             for (messageIndex, iteratedMessage) in self.chatMessages.enumerated() {
@@ -82,13 +82,13 @@ extension ChatViewController: MessageListener {
 
 // MARK: - WEBIM: HelloMessageListener
 extension ChatViewController: HelloMessageListener {
-    func helloMessage(message: String) {
+    public func helloMessage(message: String) {
         print("Received Hello message: \"\(message)\"")
     }
 }
 
 extension ChatViewController: OperatorTypingListener {
-    func onOperatorTypingStateChanged(isTyping: Bool) {
+    public func onOperatorTypingStateChanged(isTyping: Bool) {
         guard WebimServiceController.currentSession.getCurrentOperator() != nil else { return }
         guard isCurrentOperatorRated() == false else { return }
 
@@ -102,14 +102,14 @@ extension ChatViewController: OperatorTypingListener {
 
 // MARK: - WEBIM: CurrentOperatorChangeListener
 extension ChatViewController: CurrentOperatorChangeListener {
-    func changed(operator previousOperator: Operator?, to newOperator: Operator?) {
+    public func changed(operator previousOperator: Operator?, to newOperator: Operator?) {
         updateCurrentOperatorInfo(to: newOperator)
     }
 }
 
 // MARK: - WEBIM: ChatStateLisneter
 extension ChatViewController: ChatStateListener {
-    func changed(state previousState: ChatState, to newState: ChatState) {
+    public func changed(state previousState: ChatState, to newState: ChatState) {
         if (newState == .closedByVisitor || newState == .closedByOperator ) && (WebimServiceController.currentSession.sessionState() == .chatting || WebimServiceController.currentSession.sessionState() == .queue) {
             self.showRateOperatorDialog(operatorId: currentOperatorId())
         }

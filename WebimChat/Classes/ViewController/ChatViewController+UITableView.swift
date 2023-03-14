@@ -3,7 +3,7 @@ import WebimClientLibraryUpdated
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         if !messages().isEmpty {
             tableView.backgroundView = nil
             return 1
@@ -29,7 +29,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @available(iOS 11.0, *)
-    func tableView(
+    public func tableView(
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration? {
@@ -64,7 +64,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @available(iOS 11.0, *)
-    func tableView(
+    public func tableView(
         _ tableView: UITableView,
         leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
     ) -> UISwipeActionsConfiguration? {
@@ -98,16 +98,16 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [replyAction])
     }
     
-    func tableView(
+    public func tableView(
         _ tableView: UITableView,
         editingStyleForRowAt indexPath: IndexPath
     ) -> UITableViewCell.EditingStyle { .none }
     
-    func messages() -> [Message] {
+    public func messages() -> [Message] {
         return showSearchResult ? searchMessages : chatMessages
     }
     
-    func showSearchResult(messages: [Message]?) {
+    public func showSearchResult(messages: [Message]?) {
         if let messages = messages {
             self.searchMessages = messages
             self.showSearchResult = true
@@ -119,7 +119,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         self.reloadTableWithNewData()
     }
     
-    func updatedCellGeneration(_ message: Message) -> UITableViewCell {
+    public func updatedCellGeneration(_ message: Message) -> UITableViewCell {
         
         var isImage = false
         var isFile = false

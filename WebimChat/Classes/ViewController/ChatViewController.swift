@@ -713,7 +713,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
 
 extension ChatViewController: UIScrollViewDelegate {
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateScrollButtonView()
     }
 

@@ -4,14 +4,14 @@ import WebimClientLibraryUpdated
 // MARK: - WEBIM: SurveyListener
 extension ChatViewController: SurveyListener {
     
-    func on(survey: Survey) {
+    public func on(survey: Survey) {
         surveyCounter = 0
         for form in survey.getConfig().getDescriptor().getForms() {
             surveyCounter += form.getQuestions().count
         }
     }
     
-    func on(nextQuestion: SurveyQuestion) {
+    public func on(nextQuestion: SurveyQuestion) {
         DispatchQueue.main.async {
             if self.rateStarsViewController != nil {
                 self.delayedSurvayQuestion = nextQuestion
@@ -33,7 +33,7 @@ extension ChatViewController: SurveyListener {
         }
     }
     
-    func onSurveyCancelled() {
+    public func onSurveyCancelled() {
         surveyCounter = -1
         self.surveyCommentViewController?.close(nil)
         self.rateStarsViewController?.close(nil)
@@ -166,7 +166,7 @@ extension ChatViewController: RateStarsViewControllerDelegate, WMSurveyViewContr
 // MARK: - WEBIM: CompletionHandlers
 extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCompletionHandler {
     
-    func onSuccess() {
+    public func onSuccess() {
         if self.delayedSurvayQuestion == nil || self.surveyCounter == 0 {
             self.thanksView.showAlert()
             if surveyCounter == 0 {
@@ -181,7 +181,7 @@ extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCom
         }
     }
     
-    func onFailure(error: RateOperatorError) {
+    public func onFailure(error: RateOperatorError) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.41) {
             var message = String()
             switch error {
@@ -201,7 +201,7 @@ extension ChatViewController: RateOperatorCompletionHandler, SendSurveyAnswerCom
     }
     
     // SendSurveyAnswerCompletionHandler
-    func onFailure(error: SendSurveyAnswerError) {
+    public func onFailure(error: SendSurveyAnswerError) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.41) {
             var message = String()
             switch error {
