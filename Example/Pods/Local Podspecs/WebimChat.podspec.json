@@ -1,6 +1,6 @@
 {
   "name": "WebimChat",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "summary": "A short description of WebimChat.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git",
@@ -13,12 +13,13 @@
   },
   "source": {
     "git": "https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git",
-    "tag": "0.1.0"
+    "tag": "0.1.6"
   },
   "platforms": {
-    "ios": "11.0"
+    "ios": "12.0"
   },
   "source_files": "WebimChat/Classes/**/*",
+  "frameworks": "CoreGraphics",
   "dependencies": {
     "Nuke": [
       "~> 8.0"
