@@ -1,0 +1,6 @@
+framework module WebimClientLibraryUpdated {
+  umbrella header "WebimClientLibraryUpdated-umbrella.h"
+
+  export *
+  module * { export * }
+}

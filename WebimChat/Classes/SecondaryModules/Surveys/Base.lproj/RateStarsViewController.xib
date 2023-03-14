@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateStarsViewController" customModule="TanukiFamily" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="i5M-Pr-FkT" id="pxN-JO-KjP"/>
+                <outlet property="descriptionLabel" destination="53s-S5-RZf" id="PgL-ln-4yu"/>
+                <outlet property="sendButton" destination="v9Q-or-LCA" id="gn3-YY-JTl"/>
+                <outlet property="starsButtonsView" destination="G9q-OT-j8D" id="MBN-L8-v6i"/>
+                <outlet property="transparentBackgroundView" destination="V0O-78-Flp" id="upw-qR-fAl"/>
+                <outlet property="view" destination="f9A-JY-JhF" id="smy-Cn-SNZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="f9A-JY-JhF">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="549"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" id="V0O-78-Flp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="549"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <viewLayoutGuide key="safeArea" id="ntn-U0-kij"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+                    <rect key="frame" x="38" y="164" width="244" height="221"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please rate the overall impression of the consultation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53s-S5-RZf">
+                            <rect key="frame" x="16" y="16" width="212" height="77"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="UYx-n5-Jjs"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.22352941179999999" green="0.2470588235" blue="0.41960784309999999" alpha="0.54000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Q-or-LCA">
+                            <rect key="frame" x="72" y="157" width="100" height="48"/>
+                            <color key="backgroundColor" red="0.08235294118" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="J84-vL-40F"/>
+                                <constraint firstAttribute="height" constant="48" id="qtF-wu-7i0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <state key="normal" title="Send">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="sendRate:" destination="-1" eventType="touchUpInside" id="HYV-Tm-DYe"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-OT-j8D" customClass="StarsButtonsView" customModule="TanukiFamily" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="109" width="244" height="32"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="6eY-hI-3zY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="53s-S5-RZf" secondAttribute="trailing" constant="16" id="2zc-yl-Qfx"/>
+                        <constraint firstItem="53s-S5-RZf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="4xK-rU-n7x"/>
+                        <constraint firstItem="v9Q-or-LCA" firstAttribute="top" secondItem="G9q-OT-j8D" secondAttribute="bottom" constant="16" id="53F-qH-DWn"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="221" id="G6l-Ip-2sB"/>
+                        <constraint firstItem="53s-S5-RZf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="HJ7-pP-lZP"/>
+                        <constraint firstItem="G9q-OT-j8D" firstAttribute="top" secondItem="53s-S5-RZf" secondAttribute="bottom" constant="16" id="VBd-Y9-hu6"/>
+                        <constraint firstItem="G9q-OT-j8D" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="afw-Hd-zwQ"/>
+                        <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v9Q-or-LCA" secondAttribute="trailing" constant="16" id="g3G-Dn-Jkd"/>
+                        <constraint firstItem="v9Q-or-LCA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oLj-fD-v2V"/>
+                        <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="v9Q-or-LCA" secondAttribute="bottom" constant="16" id="u5D-ok-jHb"/>
+                        <constraint firstItem="v9Q-or-LCA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uQL-pq-sQQ"/>
+                        <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="G9q-OT-j8D" secondAttribute="leading" id="yNL-fW-dtH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="1Lj-lO-fK7"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="centerY" secondItem="1Lj-lO-fK7" secondAttribute="centerY" id="VDO-dq-d1b"/>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="leading" secondItem="1Lj-lO-fK7" secondAttribute="leading" constant="38" id="XpV-gL-E3r"/>
+                <constraint firstItem="i5M-Pr-FkT" firstAttribute="trailing" secondItem="1Lj-lO-fK7" secondAttribute="trailing" constant="-38" id="trp-qi-woG"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-378.75" y="105.1056338028169"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
