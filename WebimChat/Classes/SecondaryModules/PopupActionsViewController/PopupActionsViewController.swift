@@ -103,7 +103,7 @@ class PopupActionsViewController: UIViewController {
         if let index = self.actionsTableView.indexPathForSelectedRow {
             self.actionsTableView.deselectRow(at: index, animated: true)
         }
-        Settings.keyboardHidden(false)
+        WebimServiceController.keyboardHidden(false)
     }
     
     // MARK: - Methods

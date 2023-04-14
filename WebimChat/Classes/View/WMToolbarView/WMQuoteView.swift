@@ -32,7 +32,7 @@ class WMQuoteView: UIView, URLSessionDelegate {
     func currentMessage() -> String {
         return quoteMessageText.text ?? ""
     }
-    
+
     func currentMode() -> WMQuoteViewMode {
         return mode
     }
@@ -68,9 +68,7 @@ class WMQuoteView: UIView, URLSessionDelegate {
         quoteAuthorName.attributedText = quoteAuthor.styleBase(.bodyBold, color: .primary2)
         quoteView.layer.cornerRadius = 10
         quoteMessageText.attributedText = quoteText.styleBase(.bodyMedium, color: .primary2)
-        if #available(iOS 11.0, *) {
-            quoteView.layer.maskedCorners = [ .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
-        }
+        quoteView.layer.maskedCorners = [ .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         quoteLine.backgroundColor = AppColor.primary1.getColor()
         
         let closeBtnImage = UIImage(named: "close-24px")?.withRenderingMode(.alwaysTemplate)

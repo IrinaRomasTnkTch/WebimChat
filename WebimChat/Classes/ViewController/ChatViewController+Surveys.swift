@@ -110,7 +110,7 @@ extension ChatViewController {
     
     func showSurveyCommentDialog(description: String) {
         DispatchQueue.main.async {
-            Settings.keyboardHidden(true)
+            WebimServiceController.keyboardHidden(true)
             
             let vc = SurveyCommentViewController()
             self.surveyCommentViewController = vc
@@ -124,7 +124,7 @@ extension ChatViewController {
     func showSurveyRadioButtonDialog(description: String, points: [String]) {
         
         DispatchQueue.main.async {
-            Settings.keyboardHidden(true)
+            WebimServiceController.keyboardHidden(true)
             
             let vc = SurveyRadioButtonViewController()
             self.surveyRadioButtonViewController = vc

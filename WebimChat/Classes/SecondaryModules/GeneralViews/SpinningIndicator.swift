@@ -26,7 +26,6 @@
 
 import Foundation
 import UIKit
-import CoreGraphics
 
 class SpinningIndicator: UIView {
     

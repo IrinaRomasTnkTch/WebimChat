@@ -9,11 +9,9 @@ enum AppStyleFontName: String {
 // MARK: AppStyleText
 enum AppStyleText {
     // Display, Title
-//    case display
 //    case title1
 //    case title2
     case title3
-//    case title4
     
     // Body Big
 //    case bodyBigBold
@@ -39,11 +37,11 @@ enum AppStyleText {
         
 //        case .bodyBigBold:      return createAttributes(kern: -0.01, nameFont: .ptRootBolt, sizeFont: 18, lineHeight: 0.8)
 //        case .bodyBigMedium:    return createAttributes(kern: -0.01, nameFont: .ptRootMedium, sizeFont: 18)
-//
+        
         case .bodyBold:         return createAttributes(kern: -0.01, nameFont: .ptRootBolt, sizeFont: 16)
         case .bodyMedium:       return createAttributes(kern: -0.01, nameFont: .ptRootMedium, sizeFont: 16)
 //        case .bodyMediumTight:  return createAttributes(kern: -0.01, nameFont: .ptRootMedium, sizeFont: 16, lineHeight: 0.8)
-//
+        
         case .caption:          return createAttributes(kern: -0.01, nameFont: .ptRootMedium, sizeFont: 14)
 //        case .captionBolt:      return createAttributes(kern: -0.01, nameFont: .ptRootBolt, sizeFont: 14)
         case .captionSmall:     return createAttributes(kern: -0.01, nameFont: .ptRootMedium, sizeFont: 12)
@@ -74,7 +72,7 @@ enum AppStyleText {
     
     func getFont() -> UIFont {
         let attributedStringKeys = getAttributedStringKeys()
-        return attributedStringKeys[NSAttributedString.Key.font] as! UIFont
+        return (attributedStringKeys[NSAttributedString.Key.font] as? UIFont) ?? UIFont()
     }
     
     func getKern() -> Double {
@@ -88,7 +86,7 @@ enum AppStyleText {
           paragraphStyle.lineHeightMultiple = lineHeight
           return [NSAttributedString.Key.kern: kern, NSAttributedString.Key.font: UIFont(name: nameFont.rawValue, size: sizeFont)!].merging([NSAttributedString.Key.paragraphStyle : paragraphStyle], uniquingKeysWith: { (_, last) in last })
         } else {
-          return [NSAttributedString.Key.kern: kern, NSAttributedString.Key.font: UIFont(name: nameFont.rawValue, size: sizeFont)!]
+          return [NSAttributedString.Key.kern: kern, NSAttributedString.Key.font: UIFont(name: nameFont.rawValue, size: sizeFont)]
         }
       }
 }

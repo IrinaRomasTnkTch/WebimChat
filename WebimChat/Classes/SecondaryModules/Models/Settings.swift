@@ -68,30 +68,4 @@ final class Settings {
                                   forKey: USER_DEFAULTS_NAME)
     }
     
-    // MARK: - Keyboard
-    static var keyboardWindow: UIWindow? {
-        
-        let windows = UIApplication.shared.windows
-        if let keyboardWindow = windows.first(where: { NSStringFromClass($0.classForCoder) == "UIRemoteKeyboardWindow" }) {
-          return keyboardWindow
-        }
-        return nil
-    }
-    
-    static func keyboardHidden(_ hidden: Bool) {
-        DispatchQueue.main.async {
-            Settings.keyboardWindow?.isHidden = hidden
-        }
-    }
-    
-    static func checkMainThread() {
-        if !Thread.isMainThread {
-#if DEBUG
-            fatalError("Not main thread error")
-#else
-            print("Not main thread error")
-#endif
-        }
-    }
-    
 }

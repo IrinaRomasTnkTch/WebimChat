@@ -155,7 +155,6 @@ extension UITextView {
         
         let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
         let matches: [NSTextCheckingResult] = detector.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-//        var stringAttributes: [NSAttributedString.Key: AnyObject] = [ NSAttributedString.Key.font: self.notNilFont() ]
         var stringAttributes: [NSAttributedString.Key: AnyObject] = [ NSAttributedString.Key.font: AppStyleText.bodyMedium.getFont() ]
         if let textColor = textColor {
             stringAttributes[NSAttributedString.Key.foregroundColor] = textColor

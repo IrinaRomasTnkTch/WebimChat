@@ -30,7 +30,7 @@ extension ChatViewController: WMDialogPopoverDelegate {
     
     @objc
     func hideOverlayWindow() {
-        Settings.keyboardHidden(false)
+        WebimServiceController.keyboardHidden(false)
     }
     
     func removeQuoteEditBar() {

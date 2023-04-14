@@ -1,6 +1,14 @@
 import Foundation
 import WebimClientLibraryUpdated
 
+class ProfileEntity {
+    var id = 0
+    var name: String?
+    var surname: String?
+    var phone: String?
+    var email: String?
+}
+
 final class WebimService {
     
     // MARK: - Constants
@@ -46,28 +54,36 @@ final class WebimService {
         return webimSession?.getStream().getChatState() ?? .unknown
     }
     
-    func createTestUserData() -> String {
-        // !!!secretString MUST NOT be used in real application!!!
-        let secretString = "64f7099e123231123123123121"
-        var properties = [String: String]()
-
-        properties["id"] = "test_id"
-        properties["display_name"] = "test_name"
+    func createUserData(profile: ProfileEntity) -> Data {
+        let secretString = "2851c56e6945da670b44a179e7c34d94"
+        var fields = [String: String]()
+        var properties = [String: Any]()
         
-        var keys = Array(properties.keys)
+        let name = profile.name ?? ""
+        let surname = profile.surname ?? ""
+        let fullName = name != "" ? name + " " + surname : surname
+
+        fields["id"] = "\(profile.id)"
+        fields["phone"] = profile.phone ?? ""
+        fields["email"] = profile.email ?? ""
+        fields["display_name"] = fullName
+        
+        var keys = Array(fields.keys)
         keys.sort()
         var stringToSign = ""
         for key in keys {
-            stringToSign += properties[key]!
+            stringToSign += fields[key] ?? ""
         }
+        print("stringToSign", stringToSign)
         
         let crc = stringToSign.hmacSHA256(withKey: secretString)
-        properties["crc"] = crc
+        print("crc", crc)
+        properties["fields"] = fields
+        properties["hash"] = crc ?? ""
         
         let jsonData = try! JSONSerialization.data(withJSONObject: properties, options: [])
-        let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!
 
-        return jsonString
+        return jsonData
     }
 
     // MARK: - Methods
@@ -75,7 +91,7 @@ final class WebimService {
         
         let deviceToken: String? = WMKeychainWrapper.standard.string(forKey: WMKeychainWrapper.deviceTokenKey)
         
-        let sessionBuilder = Webim.newSessionBuilder()
+        var sessionBuilder = Webim.newSessionBuilder()
             .set(accountName: "tanukiru")
             .set(location: "default")
             .set(pageTitle: Settings.shared.pageTitle)
@@ -87,15 +103,13 @@ final class WebimService {
                  verbosityLevel: .verbose,
                  availableLogTypes: [.networkRequest, .messageHistory, .manualCall, .undefined])
         
+//        if let profileData = ProfileManager.shared.profile {
+//            _ = sessionBuilder.set(visitorFieldsJSONData: createUserData(profile: profileData))
+//        }
+        
+        
         if let notFatalErrorHandler = notFatalErrorHandler {
             _ = sessionBuilder.set(notFatalErrorHandler: notFatalErrorHandler)
-        }
-        
-        // Only for development phase you can use this function to test generation visitorFieldsJSONString
-//        _ = sessionBuilder.set(visitorFieldsJSONString: createTestUserData())
-        
-        if !Settings.shared.userDataJson.isEmpty {
-            _ = sessionBuilder.set(visitorFieldsJSONString: Settings.shared.userDataJson)
         }
         
         sessionBuilder.build(

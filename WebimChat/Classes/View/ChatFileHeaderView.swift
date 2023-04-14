@@ -1,9 +1,5 @@
 import UIKit
 
-@objc protocol TopHeaderViewDelegate: AnyObject {
-    func backButtonDidPress()
-}
-
 class ChatFileHeaderView: UIView {
     
     let backButton: UIButton = {

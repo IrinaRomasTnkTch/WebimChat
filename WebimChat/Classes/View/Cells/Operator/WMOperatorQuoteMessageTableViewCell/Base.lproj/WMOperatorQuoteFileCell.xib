@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WMMessageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="196" translatesAutoresizingMaskIntoConstraints="NO" id="emn-fc-I9D" customClass="WMOperatorQuoteFileCell" customModule="WebimClientLibrary_Example" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WMMessageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="196" translatesAutoresizingMaskIntoConstraints="NO" id="emn-fc-I9D" customClass="WMOperatorQuoteFileCell" customModule="TanukiFamily" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="emn-fc-I9D" id="YEg-P4-lzN">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="196"/>
@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vx4-i1-IVN" customClass="WMVisitorQuoteFileCell" customModule="WebimClientLibrary_Example" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vx4-i1-IVN" customClass="WMVisitorQuoteFileCell" customModule="TanukiFamily" customModuleProvider="target">
                                 <rect key="frame" x="12" y="32" width="207" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;?&gt;Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XlZ-af-n82">
@@ -142,6 +142,7 @@
                 <outlet property="messageTextView" destination="AeA-9K-N0C" id="tVO-UB-mVI"/>
                 <outlet property="messageView" destination="3ch-b1-dfM" id="b6F-kR-weh"/>
                 <outlet property="quoteAuthorName" destination="XlZ-af-n82" id="FvU-Qe-kdO"/>
+                <outlet property="quoteLine" destination="DR5-6V-k8T" id="pGy-qJ-UMq"/>
                 <outlet property="quoteMessageText" destination="4kN-3Y-Uh1" id="v6f-Is-4uz"/>
                 <outlet property="quoteView" destination="vx4-i1-IVN" id="Oze-AB-2P7"/>
                 <outlet property="time" destination="6F0-xq-Wen" id="Vgi-8f-I4a"/>

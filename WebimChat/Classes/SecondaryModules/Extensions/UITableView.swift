@@ -45,12 +45,15 @@ extension UITableView {
     }
     
     func scrollToRowSafe(at indexPath: IndexPath, at scrollPosition: UITableView.ScrollPosition, animated: Bool) {
+        print("scrollToRowSafe begin")
         if  indexPath.section >= 0 &&
             indexPath.row >= 0 &&
             self.numberOfSections > indexPath.section &&
             self.numberOfRows(inSection: indexPath.section) > indexPath.row {
+            print("scrollToRowSafe start")
             self.scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
         }
+        print("scrollToRowSafe end")
     }
 }
 

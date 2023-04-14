@@ -33,7 +33,6 @@ final class AppStyle {
     }
     
     public func getAppStyleMode() -> AppStyleMode {
-//###     return customStyleSelected ? appStyleMode : (systemDarkModeEnabled ? .black : .whiteDefault)
         return .whiteDefault
     }
     

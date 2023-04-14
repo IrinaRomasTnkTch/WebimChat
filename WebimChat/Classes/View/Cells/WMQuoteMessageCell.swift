@@ -5,12 +5,12 @@ class WMQuoteMessageCell: WMMessageTableCell {
     
     @IBOutlet var quoteMessageText: UILabel!
     @IBOutlet var quoteAuthorName: UILabel!
-    @IBOutlet var quoteLine: UIView!
+    @IBOutlet var quoteLine: UIView?
     
     @IBOutlet var messageTextView: UITextView!
     
     override func initialSetup() -> Bool {
-        quoteLine.backgroundColor = AppColor.primary1.getColor()
+        quoteLine?.backgroundColor = AppColor.primary1.getColor()
         messageView.backgroundColor = AppColor.accent200.getColor()
         return super.initialSetup()
     }

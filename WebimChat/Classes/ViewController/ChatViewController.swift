@@ -70,10 +70,10 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
 
     // MARK: - Subviews
     // Scroll button
-    lazy var scrollButtonView: ScrollButtonView = ScrollButtonView.loadXibView()
+    lazy var scrollButtonView: ScrollButtonView = ScrollButtonView.loadXibView(forClass: ScrollButtonView.self, forResource: "ScrollButtonView")
 
-    lazy var thanksView = WMThanksAlertView.loadXibView()
-    lazy var connectionErrorView = ConnectionErrorView.loadXibView()
+    lazy var thanksView = WMThanksAlertView.loadXibView(forClass: WMThanksAlertView.self, forResource: "WMThanksAlertView")
+    lazy var connectionErrorView = ConnectionErrorView.loadXibView(forClass: ConnectionErrorView.self, forResource: "ConnectionErrorView")
 //    lazy var chatTestView = ChatTestView.loadXibView()
     
 
@@ -95,7 +95,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
         return true
     }
     
-    public func showToolbarWithHeight(_ height: CGFloat) {}
+    func showToolbarWithHeight(_ height: CGFloat) {}
 
     // MARK: - View Life Cycle
     public override func viewDidLoad() {
@@ -249,7 +249,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
             if operatorAvatarURL == OperatorAvatar.empty.rawValue {
                 self.headerView.avatarImageView.image = UIImage(named: "Avatar")
             } else if operatorAvatarURL == OperatorAvatar.placeholder.rawValue {
-                self.headerView.avatarImageView.image = userAvatarImagePlaceholder
+                self.headerView.avatarImageView.image = UIImage(named: "Avatar")
             } else {
                 guard let url = URL(string: operatorAvatarURL) else { return }
                 
@@ -316,6 +316,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
                                           at: .bottom,
                                           animated: true)
         } else {
+            self.chatTableView.layoutIfNeeded()
             self.scrollToBottom(animated: true)
         }
     }
@@ -384,6 +385,19 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
             imageName = "photo.jpeg"
         }
         
+        print("Webim send image, check size:", "\(imageData.count)")
+        
+        let maxSizeBytes = 9.8 * 1024 * 1024
+        
+        if imageData.count > Int(maxSizeBytes) {
+            if let newImageData = compressImage(image, maxSizeBytes: Int(maxSizeBytes)) {
+                imageData = newImageData
+            } else {
+                alertDialogHandler.showDialog(withMessage: "Максимальный размер отправляемого файла не должен превышать 10 Мб.".localized(), title: "Слишком большой файл".localized())
+                return
+            }
+        }
+        
         WebimServiceController.currentSession.send(
             file: imageData,
             fileName: imageName,
@@ -391,6 +405,22 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
             completionHandler: self
         )
         scrollAfterSendFile()
+    }
+    
+    private func compressImage(_ image: UIImage, maxSizeBytes: Int) -> Data? {
+        var compressionQuality: CGFloat = 0.8
+        var imageData = image.jpegData(compressionQuality: compressionQuality)
+        
+        while let data = imageData, data.count > maxSizeBytes {
+            compressionQuality -= 0.1
+            imageData = image.jpegData(compressionQuality: compressionQuality)
+            
+            if compressionQuality <= 0.4 {
+                return nil
+            }
+        }
+        
+        return imageData
     }
     
     
@@ -491,15 +521,12 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
             DispatchQueue.main.async {
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
                 self?.messageCounter.increaseLastReadMessageIndex(with: messages.count)
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
                 self?.reloadTableWithNewData()
                 self?.chatTableView.layoutIfNeeded()
                 if self?.scrollToBottom == true {
                     self?.scrollToBottom(animated: false)
                     self?.scrollToBottom = false
-                } else {
-                    //self?.chatTableView?.scrollToRowSafe(at: IndexPath(row: messages.count, section: 0), at: .middle, animated: false)
                 }
                 
                 self?.updateCurrentOperatorInfo(to: WebimServiceController.currentSession.getCurrentOperator())
@@ -578,7 +605,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
         }
         
         if !viewController.actions.isEmpty {
-            Settings.keyboardHidden(true)
+            WebimServiceController.keyboardHidden(true)
             let scale = (self.view.frame.width + 19) / self.view.frame.width
             self.present(viewController, animated: false) {
                 UIImageView.animate(withDuration: 0.2, animations: {() -> Void in
@@ -590,10 +617,10 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
     
     func showOverlayWindow() {
         
-        if Settings.keyboardWindow != nil {
+        if WebimServiceController.keyboardWindow != nil {
             overlayWindow?.isHidden = false
         }
-        Settings.keyboardHidden(true)
+        WebimServiceController.keyboardHidden(true)
     }
     
     @objc
@@ -623,7 +650,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
     
     // Webim methods
     private func setupWebimSession() {
-        
+        WebimServiceController.shared.stopSession()
         WebimServiceController.currentSession.setMessageTracker(withMessageListener: self)
         WebimServiceController.currentSession.set(operatorTypingListener: self)
         WebimServiceController.currentSession.set(currentOperatorChangeListener: self)
@@ -635,11 +662,13 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
 
             DispatchQueue.main.async {
                 self?.chatMessages.insert(contentsOf: messages, at: 0)
-                self?.reloadTableWithNewData()
-                self?.scrollToBottom(animated: false)
                 if messages.count < WebimService.ChatSettings.messagesPerRequest.rawValue {
                     self?.scrollToBottom = true
                     self?.requestMessages()
+                } else {
+                    self?.reloadTableWithNewData()
+                    self?.scrollToBottom(animated: false)
+                    self?.scrollToBottom = false
                 }
             }
         }
@@ -843,10 +872,6 @@ extension ChatViewController: MessageCounterDelegate {
 extension ChatViewController: TopHeaderViewDelegate {
     
     func backButtonDidPress() {
-//        if AppRouter.navigationContain(viewController: self) {
-//            self.navigationController?.popViewController(animated: true)
-//        } else {
-//            bottomSheetControl?.dismissAnimatedBottomSheetViewController(completion: nil)
-//        }
+//        BaseRouteContex().back()
     }
 }

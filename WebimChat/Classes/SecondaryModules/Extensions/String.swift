@@ -126,13 +126,12 @@ extension String {
 
 // MARK: Text Style
 extension String {
+    func styleText(_ style: AppStyleText) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: self, attributes: style.getAttributedStringKeys())
+    }
     
     func styleBase(_ style: AppStyleText, color: AppColor) -> NSMutableAttributedString {
         return self.localized().styleText(style).setColor(color)
-    }
-    
-    func styleText(_ style: AppStyleText) -> NSMutableAttributedString {
-        return NSMutableAttributedString(string: self, attributes: style.getAttributedStringKeys())
     }
     
     func styleBase(_ style: AppStyleText, color: UIColor) -> NSMutableAttributedString {

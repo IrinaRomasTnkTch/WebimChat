@@ -47,20 +47,11 @@ class WMNewMessageView: UIView {
     }
     
     override func loadXibViewSetup() {
-//        messageText.layer.cornerRadius = 17
-//        messageText.layer.borderWidth = 1
-//        messageText.layer.borderColor = wmGreyMessage
         messageText.isScrollEnabled = true
-//        messageText.textColor = .black
         messageText.textColor = AppColor.primary2.getColor()
         messageText.font = AppStyleText.bodyMedium.getFont()
-        messageText.contentInset.left = 10
+//        messageText.contentInset.left = 10
         messageText.textContainerInset.right = 40
-//        let topBorder = CALayer()
-//        topBorder.frame = CGRect(x: 0, y: 0, width: max(UIScreen.main.bounds.width, UIScreen.main.bounds.height), height: 1)
-//        topBorder.backgroundColor = wmGreyMessage
-//        layer.addSublayer(topBorder)
-//        let shadow = CALayer()
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 0).cgPath
         self.layer.position = self.center
         self.layer.bounds = self.bounds
@@ -68,7 +59,6 @@ class WMNewMessageView: UIView {
         self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.24).cgColor
         self.layer.shadowOffset = .zero
         self.layer.shadowRadius = 4
-//        self.layer.addSublayer(shadow)
         messageText.delegate = self
         
         messagePlaceholder.attributedText = "Текст...".localized().styleBase(.bodyMedium, color: .grey300)
@@ -76,7 +66,7 @@ class WMNewMessageView: UIView {
         sendButton.setImage(UIImage(named: "send_button"), for: .normal)
 
         translatesAutoresizingMaskIntoConstraints = false
-        recountViewHeight()
+//        recountViewHeight()
     }
     
     var textInputTextViewBufferString: String?
@@ -111,6 +101,5 @@ extension WMNewMessageView: UITextViewDelegate {
         let check = textView.hasText && !textView.text.isEmpty
         messageText.layer.borderColor = check ? wmLayerColor : wmGreyMessage
         messagePlaceholder.isHidden = check
-//        sendButton.isEnabled = check
     }
 }

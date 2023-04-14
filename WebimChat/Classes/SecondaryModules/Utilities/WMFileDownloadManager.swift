@@ -40,12 +40,12 @@ class WMFileDownloadManager: NSObject {
     private var listeners = [URL: Set<DownloadListenerContainer>]()
     
     static func dropListeners() {
-        Settings.checkMainThread()
+        WebimServiceController.checkMainThread()
         shared.listeners = [URL: Set<DownloadListenerContainer>]()
     }
     
     func addProgressListener(url: URL, listener: WMFileDownloadProgressListener) {
-        Settings.checkMainThread()
+        WebimServiceController.checkMainThread()
         if !listeners.containsKey(keySearch: url) {
             listeners[url] = Set<DownloadListenerContainer>()
         }
@@ -53,7 +53,7 @@ class WMFileDownloadManager: NSObject {
     }
     
     func removeListener(listener: WMFileDownloadProgressListener, url: URL) {
-        Settings.checkMainThread()
+        WebimServiceController.checkMainThread()
         listeners[url] = listeners[url]?.filter { $0.getValue() != nil && $0.getValue() !== listener }
     }
     
@@ -71,7 +71,7 @@ class WMFileDownloadManager: NSObject {
     }
     
     func subscribeForImage(url: URL, progressListener: WMFileDownloadProgressListener) {
-        Settings.checkMainThread()
+        WebimServiceController.checkMainThread()
         let request = ImageRequest(url: url)
         if let imageContainer = ImageCache.shared[request] {
             progressListener.progressChanged(url: url, progress: 1, image: imageContainer)
@@ -87,12 +87,12 @@ class WMFileDownloadManager: NSObject {
                     if total != 0 {
                         progress = Float(completed) / Float(total)
                     }
-                    Settings.checkMainThread()
+                    WebimServiceController.checkMainThread()
                     self.progressDictionary[url] = progress
                     self.sendProgressChangedEventFor(url: url, progress: progress, image: nil)
                 },
                 completion: { _ in
-                    Settings.checkMainThread()
+                    WebimServiceController.checkMainThread()
                     self.sendProgressChangedEventFor(url: url, progress: 1, image: ImageCache.shared[request])
                 }
             )

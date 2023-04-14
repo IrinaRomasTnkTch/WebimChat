@@ -10,20 +10,11 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
     private let SPACING_CELL: CGFloat = 6.0
     private let SPACING_DEFAULT: CGFloat = 10.0
     
-    
-    lazy var buttonsVerticalStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.alignment = .trailing
-        stackView.distribution = .fill
-        stackView.spacing = SPACING_CELL
-        return stackView
-    }()
+    private var buttonsStack = TagButtonsView()
     
     private func emptyTheCell() {
-        buttonsVerticalStack.removeFromSuperview()
-        buttonsVerticalStack.removeAllArrangedSubviews()
+        buttonsStack.removeFromSuperview()
+        buttonsStack.clearTags()
         self.messageView.isHidden = true
         self.messageTextView.text = ""
         self.buttonView.isHidden = false
@@ -34,8 +25,8 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
         self.messageView.alpha = 0
         self.buttonView.alpha = 1
         self.message = message
-        buttonView.addSubview(buttonsVerticalStack)
         fillButtonsCell(message: message, showFullDate: true)
+        buttonsStack.layoutIfNeeded()
     }
     
     override func initialSetup() -> Bool {
@@ -64,6 +55,7 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
             return
         }
         
+        var uiButtons = [UIButton]()
         for buttonsStack in buttonsArray {
             for button in buttonsStack {
                 let uiButton = UIButton(type: .system),
@@ -106,24 +98,22 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
                 uiButton.backgroundColor = AppColor.primary3.getColor()
                 uiButton.tintColor = AppColor.primary2.getColor()
                 
-                buttonsVerticalStack.addArrangedSubview(uiButton)
-                uiButton.snp.remakeConstraints { make in
-                    make.trailing.equalToSuperview()
-                }
-                buttonsVerticalStack.sizeToFit()
+                uiButtons.append(uiButton)
             }
         }
+        buttonsStack = TagButtonsView()
+        buttonView.addSubview(buttonsStack)
+        buttonsStack.tagButtons = uiButtons
         cellLayoutConstraintButtons(showFullDate: showFullDate)
     }
     
     private func cellLayoutConstraintButtons(showFullDate: Bool) {
-        buttonsVerticalStack.snp.remakeConstraints { (make) -> Void in
-            make.top.equalToSuperview()
-                .inset(SPACING_DEFAULT)
+        buttonsStack.translatesAutoresizingMaskIntoConstraints = false
+        buttonsStack.snp.makeConstraints { (make) -> Void in
+            make.top.equalToSuperview().inset(SPACING_DEFAULT)
+            make.bottom.equalToSuperview()
             make.trailing.leading.equalToSuperview()
-            make.height.lessThanOrEqualToSuperview().inset(10)
         }
-        buttonsVerticalStack.sizeToFit()
     }
     
     private func buttonWasSelected() {
@@ -173,4 +163,107 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
             self.buttonWasSelected()
         })
     }
+}
+
+
+class TagButtonsView: UIView {
+    
+    var tagButtons: [UIButton] = [] {
+        didSet {
+            addTagLabels()
+        }
+    }
+    
+    let tagHeight:CGFloat = 38
+    let tagPadding: CGFloat = 16
+    let tagSpacingX: CGFloat = 8
+    let tagSpacingY: CGFloat = 8
+
+    var intrinsicHeight: CGFloat = 0
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    func commonInit() -> Void {
+    }
+    
+    func clearTags() {
+        tagButtons.removeAll()
+    }
+
+    func addTagLabels() -> Void {
+        
+        // if we already have tag labels (or buttons, etc)
+        //  remove any excess (e.g. we had 10 tags, new set is only 7)
+        while self.subviews.count > tagButtons.count {
+            self.subviews[0].removeFromSuperview()
+        }
+        
+        for tag in tagButtons {
+            addSubview(tag)
+        }
+
+        for (_, v) in zip(tagButtons, self.subviews) {
+            guard let tagButton = v as? UIButton else { return }
+            tagButton.frame.size.width = (tagButton.titleLabel?.intrinsicContentSize.width ?? 0) + tagPadding
+            tagButton.frame.size.height = tagHeight
+        }
+
+    }
+    
+    func displayTagLabels() {
+        
+        var currentOriginX: CGFloat = 0
+        var currentOriginY: CGFloat = 0
+
+        // for each label in the array
+        self.subviews.forEach { v in
+            
+            guard let tagButton = v as? UIButton else { return }
+
+            // if current X + label width will be greater than container view width
+            //  "move to next row"
+            if currentOriginX + tagButton.frame.width > bounds.width {
+                currentOriginX = 0
+                currentOriginY += tagHeight + tagSpacingY
+            }
+            
+            // set the btn frame origin
+            tagButton.frame.origin.x = currentOriginX
+            tagButton.frame.origin.y = currentOriginY
+            
+            tagButton.frame.size.width = tagButton.frame.width > 40 ? tagButton.frame.width : 40
+            
+            // increment current X by btn width + spacing
+            currentOriginX += tagButton.frame.width + tagSpacingX
+        }
+        
+//        subviews.last?.snp.remakeConstraints{ make in
+//            make.bottom.equalToSuperview()
+//        }
+        
+        // update intrinsic height
+        intrinsicHeight = currentOriginY + tagHeight
+        invalidateIntrinsicContentSize()
+        
+    }
+
+    // allow this view to set its own intrinsic height
+    override var intrinsicContentSize: CGSize {
+        var sz = super.intrinsicContentSize
+        sz.height = intrinsicHeight
+        return sz
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        displayTagLabels()
+    }
+    
 }

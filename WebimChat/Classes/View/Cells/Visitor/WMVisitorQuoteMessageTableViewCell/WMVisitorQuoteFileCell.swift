@@ -3,6 +3,8 @@ import WebimClientLibraryUpdated
 
 class WMVisitorQuoteFileCell: WMQuoteFileCell {
     
+    @IBOutlet var quoteLine: UIView?
+    
     override func setMessage(message: Message, tableView: UITableView) {
         super.setMessage(message: message, tableView: tableView)
         
@@ -12,6 +14,8 @@ class WMVisitorQuoteFileCell: WMQuoteFileCell {
     
     override func initialSetup() -> Bool {
         let setup = super.initialSetup()
+        messageView.backgroundColor = AppColor.accent200.getColor()
+        quoteLine?.backgroundColor = AppColor.primary1.getColor()
         if setup {
             self.sharpCorner(view: messageView, visitor: true)
         }

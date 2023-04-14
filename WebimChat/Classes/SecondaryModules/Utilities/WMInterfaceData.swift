@@ -53,12 +53,10 @@ class WMInterfaceData {
     
     // MARK: - Methods
     func screenWidth() -> CGFloat {
-//        return AppDelegate.shared.window?.frame.width ?? 0
-        return 0
+        return UIApplication.shared.windows.first?.frame.width ?? 0
     }
     func screenHeight() -> CGFloat {
-//        return AppDelegate.shared.window?.frame.height ?? 0
-        return 0
+        return UIApplication.shared.windows.first?.frame.height ?? 0
     }
     
     func keyboardHeight() -> CGFloat {

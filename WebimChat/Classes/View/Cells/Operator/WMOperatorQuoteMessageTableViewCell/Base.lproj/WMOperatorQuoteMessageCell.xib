@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WMMessageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="257" id="emn-fc-I9D" customClass="WMOperatorQuoteMessageCell" customModule="WebimClientLibrary_Example" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WMMessageTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="257" id="emn-fc-I9D" customClass="WMOperatorQuoteMessageCell" customModule="TanukiFamily" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="emn-fc-I9D" id="YEg-P4-lzN">
@@ -129,6 +129,7 @@
                 <outlet property="messageTextView" destination="AeA-9K-N0C" id="tWx-QN-jLE"/>
                 <outlet property="messageView" destination="3ch-b1-dfM" id="AAw-pj-n34"/>
                 <outlet property="quoteAuthorName" destination="XlZ-af-n82" id="5mZ-QC-SDW"/>
+                <outlet property="quoteLine" destination="DR5-6V-k8T" id="j31-Rz-bkP"/>
                 <outlet property="quoteMessageText" destination="4kN-3Y-Uh1" id="0IJ-du-76p"/>
                 <outlet property="quoteView" destination="vx4-i1-IVN" id="0E8-oT-s6o"/>
                 <outlet property="time" destination="6F0-xq-Wen" id="QIy-No-G3i"/>

@@ -14,7 +14,7 @@ extension ChatViewController: WMDialogCellDelegate {
         guard let url = url
         else { return }
         
-        let vc = WMImageViewController.loadViewControllerFromXib()
+        let vc = WMImageViewController.loadViewControllerFromXib(bundle: WMImageViewController.self)
         vc.selectedImageURL = url
         vc.selectedImage = image
         
@@ -39,7 +39,7 @@ extension ChatViewController: WMDialogCellDelegate {
     }
     
     public func openFile(message: Message?, url: URL?) {
-        let vc = WMFileViewController.loadViewControllerFromXib()
+        let vc = WMFileViewController.loadViewControllerFromXib(bundle: WMFileViewController.self)
         vc.fileDestinationURL = url
         navigationController?.pushViewController(vc, animated: true)
     }

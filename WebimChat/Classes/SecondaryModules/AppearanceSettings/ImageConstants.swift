@@ -27,12 +27,6 @@
 import Foundation
 import UIKit
 
-// ChatViewController.swift
-let closeButtonImage = #imageLiteral(resourceName: "CloseButton")
-//let fileButtonImage = UIImage(named: "eva_attach-fill")
-let navigationBarTitleImageViewImage = #imageLiteral(resourceName: "LogoWebimNavigationBar_dark")
-let textInputButtonImage = #imageLiteral(resourceName: "SendMessageButton")
-
 // ChatTableViewController.swift
 let documentFileStatusImageViewImage = #imageLiteral(resourceName: "FileDownloadError")
 let leadingSwipeActionImage =
@@ -56,9 +50,6 @@ let documentFileStatusButtonDownloadError = #imageLiteral(resourceName: "FileDow
 let documentFileStatusButtonDownloadSuccessOperator = #imageLiteral(resourceName: "FileDownloadSuccessOperator")
 let documentFileStatusButtonDownloadSuccessVisitor = #imageLiteral(resourceName: "FIleDownloadSeccessVisitor")
 let documentFileStatusButtonUploadVisitor = #imageLiteral(resourceName: "FileUploadButtonVisitor.pdf")
-let userAvatarImagePlaceholder = #imageLiteral(resourceName: "HardcodedVisitorAvatar")
-let messageStatusImageViewImageSent = #imageLiteral(resourceName: "Sent")
-let messageStatusImageViewImageRead = #imageLiteral(resourceName: "ReadByOperator")
 
 // PopupActionTableViewCell.swift
 let replyImage = #imageLiteral(resourceName: "ActionReply")

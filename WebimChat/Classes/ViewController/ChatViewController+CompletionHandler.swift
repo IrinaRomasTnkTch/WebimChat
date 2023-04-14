@@ -205,6 +205,7 @@ extension ChatViewController: FatalErrorHandlerDelegate {
 extension ChatViewController: NotFatalErrorHandler {
     
     public func on(error: WebimNotFatalError) {
+        print("ChatViewController NotFatalErrorHandler:", error.getErrorString())
     }
     
     public func connectionStateChanged(connected: Bool) {

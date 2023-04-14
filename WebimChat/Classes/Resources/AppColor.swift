@@ -8,11 +8,7 @@ enum AppColor {
     case primary3 //white
     
     // Primary 1 palette
-//    case accent700
-//    case accent600
-//    case accent500
 //    case accent400
-//    case accent300
 //    case accent100
     case accent200
     
@@ -28,16 +24,12 @@ enum AppColor {
     case grey300
 //    case grey400
 //    case grey500
-//    case grey600
 //    case grey650
 //    case grey700
 //    case grey800
-//    case grey900
-//    case grey950
     
     // On Surface Primary 1
 //    case onSurfaceP1High
-//    case onSurfaceP1Medium
 //    case onSurfaceP1Low
     
     // On Surface Primary 2
@@ -56,7 +48,6 @@ enum AppColor {
 //    case alertAttention
     
     // Surface overlay
-//    case surfaceOverlayScrim
 //    case overlayP2
 
 //    case yellow01
@@ -66,7 +57,7 @@ enum AppColor {
     case feedBackStarActive
     
     // Clear
-    case clear
+//    case clear
     
     func getColor() -> UIColor {
         return AppColorPreset.getColor(style: self)
@@ -90,11 +81,7 @@ final class AppColorPreset {
         case .primary1:                 return UIColor(displayP3Red: 0.98,      green: 0.18,    blue: 0.07,     alpha: 1.00)
         case .primary2:                 return UIColor(displayP3Red: 0.00,      green: 0.00,    blue: 0.00,     alpha: 1.00)
         case .primary3:                 return UIColor(displayP3Red: 1.00,      green: 1.00,    blue: 1.00,     alpha: 1.00)
-////        case .accent700:                return UIColor(displayP3Red: 0.38,      green: 0.07,    blue: 0.03,     alpha: 1.00)
-////        case .accent600:                return UIColor(displayP3Red: 0.59,      green: 0.11,    blue: 0.04,     alpha: 1.00)
-////        case .accent500:                return UIColor(displayP3Red: 0.79,      green: 0.15,    blue: 0.06,     alpha: 1.00)
 //        case .accent400:                return UIColor(displayP3Red: 0.99,      green: 0.43,    blue: 0.35,     alpha: 1.00)
-////        case .accent300:                return UIColor(displayP3Red: 0.99,      green: 0.59,    blue: 0.54,     alpha: 1.00)
 //        case .accent100:                return UIColor(displayP3Red: 1.00,      green: 0.92,    blue: 0.91,     alpha: 1.00)
         case .accent200:                return UIColor(displayP3Red: 0.996,      green: 0.753,    blue: 0.722,     alpha: 1.00)
 //        case .grey20:                   return UIColor(displayP3Red: 0.98,      green: 0.98,    blue: 0.98,     alpha: 1.00)
@@ -108,14 +95,10 @@ final class AppColorPreset {
         case .grey300:                  return UIColor(displayP3Red: 0.70,      green: 0.67,    blue: 0.66,     alpha: 1.00)
 //        case .grey400:                  return UIColor(displayP3Red: 0.60,      green: 0.57,    blue: 0.56,     alpha: 1.00)
 //        case .grey500:                  return UIColor(displayP3Red: 0.48,      green: 0.46,    blue: 0.46,     alpha: 1.00)
-////        case .grey600:                  return UIColor(displayP3Red: 0.38,      green: 0.37,    blue: 0.36,     alpha: 1.00)
 //        case .grey650:                  return UIColor(displayP3Red: 0.312,     green: 0.312,   blue: 0.312,    alpha: 1.00)
 //        case .grey700:                  return UIColor(displayP3Red: 0.28,      green: 0.27,    blue: 0.27,     alpha: 1.00)
 //        case .grey800:                  return UIColor(displayP3Red: 0.18,      green: 0.17,    blue: 0.17,     alpha: 1.00)
-////        case .grey900:                  return UIColor(displayP3Red: 0.10,      green: 0.10,    blue: 0.10,     alpha: 1.00)
-////        case .grey950:                  return UIColor(displayP3Red: 0.04,      green: 0.04,    blue: 0.04,     alpha: 1.00)
 //        case .onSurfaceP1High:          return UIColor(displayP3Red: 0.98,      green: 0.18,    blue: 0.07,     alpha: 0.88)
-////        case .onSurfaceP1Medium:        return UIColor(displayP3Red: 0.98,      green: 0.18,    blue: 0.07,     alpha: 0.72)
 //        case .onSurfaceP1Low:           return UIColor(displayP3Red: 0.98,      green: 0.18,    blue: 0.07,     alpha: 0.40)
         case .onSurfaceP2High:          return UIColor(displayP3Red: 0.00,      green: 0.00,    blue: 0.00,     alpha: 0.88)
         case .onSurfaceP2Medium:        return UIColor(displayP3Red: 0.00,      green: 0.00,    blue: 0.00,     alpha: 0.64)
@@ -126,13 +109,12 @@ final class AppColorPreset {
 //        case .alertError:               return UIColor(displayP3Red: 0.79,      green: 0.15,    blue: 0.06,     alpha: 1.00)
 //        case .alertPositive:            return UIColor(displayP3Red: 0.24,      green: 0.64,    blue: 0.21,     alpha: 1.00)
 //        case .alertAttention:           return UIColor(displayP3Red: 0.992,     green: 0.914,   blue: 0.063,    alpha: 1.00)
-////        case .surfaceOverlayScrim:      return UIColor(displayP3Red: 0.00,      green: 0.00,    blue: 0.00,     alpha: 0.50)
 //        case .overlayP2:                return UIColor(displayP3Red: 0.00,      green: 0.00,    blue: 0.00,     alpha: 0.08)
 //        case .yellow01:                 return UIColor(displayP3Red: 1.00,      green: 0.93,    blue: 0.58,     alpha: 1.00)
 //        case .brown01:                  return UIColor(displayP3Red: 0.70,      green: 0.45,    blue: 0.00,     alpha: 1.00)
 //        case .orange:                   return UIColor(displayP3Red: 1.00,      green: 0.60,    blue: 0.20,     alpha: 0.88)
         case .feedBackStarActive:       return UIColor(displayP3Red: 1.00,      green: 0.823,   blue: 0.196,    alpha: 1)
-        case .clear:                    return UIColor.clear
+//        case .clear:                    return UIColor.clear
         }
     }
 }

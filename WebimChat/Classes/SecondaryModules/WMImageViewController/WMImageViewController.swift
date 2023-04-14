@@ -115,7 +115,7 @@ class WMImageViewController: UIViewController {
             // Save error
             alertDialogHandler.showImageSavingFailureDialog(withError: error)
         } else {
-            let saveView = WMSaveView.loadXibView()
+            let saveView = WMSaveView.loadXibView(forClass: WMSaveView.self, forResource: "WMSaveView")
             self.view.addSubview(saveView)
             saveView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
             saveView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -256,10 +256,6 @@ class WMImageViewController: UIViewController {
 extension WMImageViewController: TopHeaderViewDelegate {
     
     func backButtonDidPress() {
-//        if AppRouter.navigationContain(viewController: self) {
-//            self.navigationController?.popViewController(animated: true)
-//        } else {
-//            bottomSheetControl?.dismissAnimatedBottomSheetViewController(completion: nil)
-//        }
+//        BaseRouteContex().back()
     }
 }

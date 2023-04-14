@@ -1,6 +1,6 @@
 import UIKit
 
-class StarsButtonsView: BaseNibView {
+class StarsButtonsView: UIView {
     
     @IBOutlet weak var star1Button: UIButton!
     @IBOutlet weak var star2Button: UIButton!

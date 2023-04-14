@@ -25,11 +25,8 @@ extension ChatViewController: MessageListener {
             }
 
             self.reloadTableWithNewData()
-
-            if (!newMessage.isOperatorType() && !newMessage.isSystemType()) ||
-                self.isLastCellVisible() {
-                self.scrollToBottom(animated: true)
-            }
+            self.chatTableView.layoutIfNeeded()
+            self.scrollToBottom(animated: true)
             self.messageCounter.set(lastMessageIndex: self.chatMessages.count - 1)
         }
     }
@@ -76,6 +73,8 @@ extension ChatViewController: MessageListener {
                 }
             }
             self.reloadTableWithNewData()
+            self.chatTableView.layoutIfNeeded()
+            self.scrollToBottom(animated: true)
         }
     }
 }

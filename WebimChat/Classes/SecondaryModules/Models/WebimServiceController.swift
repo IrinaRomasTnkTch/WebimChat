@@ -46,6 +46,31 @@ class WebimServiceController {
     func sessionState() -> ChatState {
         return webimService?.sessionState() ?? .unknown
     }
+    
+    static func checkMainThread() {
+        if !Thread.isMainThread {
+#if DEBUG
+            fatalError("Not main thread error")
+#else
+            print("Not main thread error")
+#endif
+        }
+    }
+    
+    static var keyboardWindow: UIWindow? {
+        
+        let windows = UIApplication.shared.windows
+        if let keyboardWindow = windows.first(where: { NSStringFromClass($0.classForCoder) == "UIRemoteKeyboardWindow" }) {
+          return keyboardWindow
+        }
+        return nil
+    }
+    
+    static func keyboardHidden(_ hidden: Bool) {
+        DispatchQueue.main.async {
+            WebimServiceController.keyboardWindow?.isHidden = hidden
+        }
+    }
 }
 
 extension WebimServiceController: FatalErrorHandlerDelegate {
