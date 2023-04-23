@@ -88,17 +88,14 @@ extension ChatViewController {
         view.addGestureRecognizer(tap)
     }
     
-//    func setupTestView() {
-//        if WMTestManager.testModeEnabled() {
-//            chatTestView.setupView(delegate: self)
-//            self.view.addSubview(chatTestView)
-//            chatTestView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-//            chatTestView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-//            chatTestView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-//            self.view.bringSubviewToFront(chatTestView)
-//        }
-//    }
-    
+    func loadFonts() {
+        for fontName in AppStyleFontName.allCases {
+            UIFont.registerFont(
+                withFilenameString: fontName.getFileName(),
+                bundle: Bundle(for: ChatViewController.self)
+            )
+        }
+    }
     
     func configureNetworkErrorView() {
         recountNetworkErrorViewFrame()
@@ -124,7 +121,7 @@ extension ChatViewController {
     func setupScrollButton() {
         view.addSubview(scrollButtonView)
         scrollButtonView.initialSetup()
-        scrollButtonView.setScrollButtonBackgroundImage(UIImage(named: "scroll_btn"), state: .normal)
+        scrollButtonView.setScrollButtonBackgroundImage(UIImage.chatImageWith(named: "scroll_btn"), state: .normal)
         scrollButtonView.addTarget(
             self,
             action: #selector(scrollToUnreadMessage(_:)),

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMQuoteView" customModule="TanukiFamily" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WMQuoteView" customModule="WebimChat" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNa-Qv-n9j" customClass="WMQuoteView" customModule="TanukiFamily" customModuleProvider="target">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNa-Qv-n9j" customClass="WMQuoteView" customModule="WebimChat" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="446" height="71"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="URu-89-ZOW">
@@ -65,7 +65,7 @@
                             <color key="tintColor" red="0.36078431372549019" green="0.37254901960784315" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="-4" minY="-4" maxX="-4" maxY="-4"/>
                         </button>
-                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="ImagePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Qza-Tq-AE5">
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Qza-Tq-AE5">
                             <rect key="frame" x="58" y="5" width="45" height="45"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Qza-Tq-AE5" secondAttribute="height" multiplier="1:1" id="pvf-Pd-sB7"/>
@@ -118,7 +118,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ImagePlaceholder" width="150" height="150"/>
+        <image name="image_placeholder" width="150" height="150"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

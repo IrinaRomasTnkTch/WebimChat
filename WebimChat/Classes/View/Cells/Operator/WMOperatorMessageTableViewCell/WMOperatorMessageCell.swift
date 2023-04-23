@@ -47,7 +47,7 @@ class WMOperatorMessageCell: WMMessageTableCell {
             )
             
             let loadingOptions = ImageLoadingOptions(
-                placeholder: UIImage(named: "Avatar"),
+                placeholder: UIImage.chatImageWith(named: "Avatar"),
                 transition: .fadeIn(duration: 0.5)
             )
             
@@ -66,7 +66,7 @@ class WMOperatorMessageCell: WMMessageTableCell {
     override func initialSetup() -> Bool {
         messageView.backgroundColor = AppColor.primary3.getColor()
         avatarImageView.backgroundColor = .clear
-        avatarImageView.image = UIImage(named: "Avatar")
+        avatarImageView.image = UIImage.chatImageWith(named: "Avatar")
         
         let setup = super.initialSetup()
         if setup {

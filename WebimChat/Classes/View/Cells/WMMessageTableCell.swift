@@ -109,9 +109,9 @@ class WMMessageTableCell: UITableViewCell, UITextViewDelegate {
         
         self.sendStatus?.isHidden = !sendStatus
         if readStatus {
-            self.sendStatus?.image = UIImage(named: "read_by_operator")
+            self.sendStatus?.image = UIImage.chatImageWith(named: "read_by_operator")
         } else {
-            self.sendStatus?.image = UIImage(named: "sent")
+            self.sendStatus?.image = UIImage.chatImageWith(named: "sent")
         }
     }
 

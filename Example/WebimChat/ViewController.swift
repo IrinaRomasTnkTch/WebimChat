@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
         
         view.addSubview(button)
+        
+        navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +28,9 @@ class ViewController: UIViewController {
     }
     
     @objc func touchBtn() {
-//        let chat = ChatViewController()
-        let chat = ChatViewController.loadViewControllerFromXib(bundle: ChatViewController.self)
-////        let chat = ChatViewControllerTest.loadViewControllerFromXib(bundle: ChatViewController.self)
-////        let chat = XibViewController.loadViewControllerFromXib(bundle: XibViewController.self)
+        let chat = ChatViewController(accountName: "demo", location: "mobile", profile: nil, backButtonDidPressComplition: { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        })
         navigationController?.pushViewController(chat, animated: true)
     }
     

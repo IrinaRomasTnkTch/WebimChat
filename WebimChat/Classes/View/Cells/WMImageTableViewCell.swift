@@ -13,7 +13,7 @@ class WMImageTableViewCell: WMMessageTableCell, WMFileDownloadProgressListener {
     override func setMessage(message: Message, tableView: UITableView) {
         super.setMessage(message: message, tableView: tableView)
         
-        self.imagePreview.image = UIImage(named: "image_placeholder")
+        self.imagePreview.image = UIImage.chatImageWith(named: "image_placeholder")
         if let attachment = message.getData()?.getAttachment(), let imageURL = WMDownloadFileManager.shared.urlFromFileInfo(attachment.getFileInfo()) {
             self.url = imageURL
             WMFileDownloadManager.shared.subscribeForImage(url: imageURL, progressListener: self)

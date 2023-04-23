@@ -14,7 +14,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
 
     override func setMessage(message: Message, tableView: UITableView) {
         super.setMessage(message: message, tableView: tableView)
-        self.quoteImage.image = UIImage(named: "placeholder")
+        self.quoteImage.image = UIImage.chatImageWith(named: "placeholder")
         self.quoteMessageText.text = "Image".localized
         self.quoteAuthorName.attributedText = message.getQuote()?.getSenderName()?.styleBase(.bodyBold, color: .primary2)
         
@@ -41,7 +41,7 @@ class WMQuoteImageCell: WMMessageTableCell, WMFileDownloadProgressListener {
         if let image = image {
             self.quoteImage.image = image
         } else {
-            self.quoteImage.image = UIImage(named: "placeholder")
+            self.quoteImage.image = UIImage.chatImageWith(named: "placeholder")
         }
     }
     

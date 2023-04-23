@@ -35,7 +35,7 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
             resetFileStatus()
         } else {
             self.fileName?.text = "Uploading file".localized
-            self.fileStatus.setBackgroundImage(UIImage(named: "FileUploadButtonVisitor")!.colour(documentIcomColor), for: .normal)
+            self.fileStatus.setBackgroundImage(UIImage.chatImageWith(named: "FileUploadButtonVisitor")!.colour(documentIcomColor), for: .normal)
             self.fileDescription?.text = "File is being sent".localized
         }
         self.fileDownloadIndicator?.isHidden = true
@@ -44,7 +44,7 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
     
     @IBAction func openFile(_ sender: Any) {
         if documentDownloadTask?.isDownloaded ?? false {
-            self.fileStatus.setBackgroundImage( UIImage(named: "FileDownloadSuccess")!, for: .normal )
+            self.fileStatus.setBackgroundImage(UIImage.chatImageWith(named: "FileDownloadSuccess")!, for: .normal)
             delegate?.openFile(message: self.message, url: documentDownloadTask?.localFileUrl)
         } else {
             self.documentDownloadTask?.downloadFile()
@@ -67,7 +67,7 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
         if localFileUrl != nil {
             self.fileDownloadIndicator?.isHidden = true
             self.fileStatus.isHidden = false
-            self.fileStatus.setBackgroundImage( UIImage(named: "FileDownloadSuccess")!, for: .normal)
+            self.fileStatus.setBackgroundImage(UIImage.chatImageWith(named: "FileDownloadSuccess")!, for: .normal)
             self.downloadStatusLabel?.text = ""
             delegate?.openFile(message: self.message, url: localFileUrl)
         } else {
@@ -94,9 +94,9 @@ class FileMessage: WMMessageTableCell, WMDocumentDownloadTaskDelegate {
         let fileSize = message.getData()?.getAttachment()?.getFileInfo().getSize() ?? -1
         self.fileDescription?.text = FileMessage.byteCountFormatter.string(fromByteCount: fileSize)
         if self.documentDownloadTask?.isFileExist() ?? false {
-            self.fileStatus.setBackgroundImage( UIImage(named: "FileDownloadSuccess"), for: .normal )
+            self.fileStatus.setBackgroundImage(UIImage.chatImageWith(named: "FileDownloadSuccess"), for: .normal)
         } else {
-            self.fileStatus.setBackgroundImage( UIImage(named: "FileDownloadButton"), for: .normal )
+            self.fileStatus.setBackgroundImage(UIImage.chatImageWith(named: "FileDownloadButton"), for: .normal)
         }
         self.fileStatus.isUserInteractionEnabled = true
     }

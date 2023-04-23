@@ -64,14 +64,14 @@ class WMQuoteView: UIView, URLSessionDelegate {
         translatesAutoresizingMaskIntoConstraints = false
         quoteView.backgroundColor = AppColor.primary3.getColor()
         replyImageView.backgroundColor = .clear
-        replyImageView.image = UIImage(named: "fluent_arrow-reply-16-filled")
+        replyImageView.image = UIImage.chatImageWith(named: "fluent_arrow-reply-16-filled")
         quoteAuthorName.attributedText = quoteAuthor.styleBase(.bodyBold, color: .primary2)
         quoteView.layer.cornerRadius = 10
         quoteMessageText.attributedText = quoteText.styleBase(.bodyMedium, color: .primary2)
         quoteView.layer.maskedCorners = [ .layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         quoteLine.backgroundColor = AppColor.primary1.getColor()
         
-        let closeBtnImage = UIImage(named: "close-24px")?.withRenderingMode(.alwaysTemplate)
+        let closeBtnImage = UIImage.chatImageWith(named: "close-24px")?.withRenderingMode(.alwaysTemplate)
         quoteCloseButton.setImage(closeBtnImage, for: .normal)
         quoteCloseButton.imageView?.tintColor = UIColor(red: 0.6, green: 0.568, blue: 0.564, alpha: 1)
         quoteCloseButton.addTarget(self, action: #selector(removeQuoteEditBar), for: .touchUpInside)
@@ -108,7 +108,7 @@ class WMQuoteView: UIView, URLSessionDelegate {
         updateQuoteImageViewConstraints()
         self.fileURL = url
         self.fileSize = fileInfo.getSize() ?? 0
-        self.quoteImageView.image = UIImage(named: "FileDownloadButton")
+        self.quoteImageView.image = UIImage.chatImageWith(named: "FileDownloadButton")
     }
     
     override func loadXibViewSetup() {
@@ -134,6 +134,6 @@ class WMQuoteView: UIView, URLSessionDelegate {
 
 extension WMQuoteView: WMFileDownloadProgressListener {
     func progressChanged(url: URL, progress: Float, image: UIImage?) {
-        quoteImageView.image = image ?? UIImage(named: "placeholder")
+        quoteImageView.image = image ?? UIImage.chatImageWith(named: "placeholder")
     }
 }

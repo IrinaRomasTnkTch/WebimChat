@@ -5,7 +5,7 @@ class ChatFileHeaderView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "arrow_back_ios-24px")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage.chatImageWith(named: "arrow_back_ios-24px")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = AppColor.onSurfaceP2High.getColor()
         return button
     }()
@@ -13,7 +13,7 @@ class ChatFileHeaderView: UIView {
     let downloadButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "ImageDownload")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage.chatImageWith(named: "ImageDownload")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = AppColor.onSurfaceP2High.getColor()
         return button
     }()

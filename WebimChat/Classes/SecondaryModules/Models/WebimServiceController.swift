@@ -11,8 +11,17 @@ class WebimServiceController {
     weak var departmentListHandlerDelegate: DepartmentListHandlerDelegate?
     weak var notFatalErrorHandler: NotFatalErrorHandler?
     
+    private var accountName = "demo"
+    private var location = "mobile"
+    private var profile: ProfileEntity?
+    
+    func initialize(accountName: String, location: String, profile: ProfileEntity?) {
+        self.accountName = accountName
+        self.location = location
+        self.profile = profile
+    }
+    
     func createSession() -> WebimService {
-        
         stopSession()
         print("createSession")
         let service = WebimService(
@@ -21,7 +30,7 @@ class WebimServiceController {
             notFatalErrorHandler: self
         )
         
-        service.createSession()
+        service.createSession(accountName: accountName, location: location, profile: profile)
         service.startSession()
         service.setMessageStream()
         

@@ -33,5 +33,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Разрешите доступ к галерее для использования фото в чате</string>
 </dict>
 </plist>

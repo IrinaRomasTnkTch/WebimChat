@@ -6,9 +6,9 @@ class WMToolbarView: UIView {
     override var intrinsicContentSize: CGSize {
         return .zero
     }
-    var templatesTooltipView = WMTemplatesTooltipView.loadXibView(forClass: WMTemplatesTooltipView.self, forResource: "WMTemplatesTooltipView")
-    var quoteView = WMQuoteView.loadXibView(forClass: WMQuoteView.self, forResource: "WMQuoteView")
-    var messageView = WMNewMessageView.loadXibView(forClass: WMNewMessageView.self, forResource: "WMNewMessageView")
+    var templatesTooltipView = WMTemplatesTooltipView.loadXibView(forClass: WMTemplatesTooltipView.self)
+    var quoteView = WMQuoteView.loadXibView(forClass: WMQuoteView.self)
+    var messageView = WMNewMessageView.loadXibView(forClass: WMNewMessageView.self)
     
     var heightConstraint: NSLayoutConstraint?
     var quoteViewTopConstraint: NSLayoutConstraint?

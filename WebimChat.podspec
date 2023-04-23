@@ -33,9 +33,11 @@ TODO: Add long description of the pod here.
   s.source_files = 'WebimChat/Classes/**/*'
   
    s.resource_bundles = {
-     'WebimChat' => ['WebimChat/Classes/**/*.png'],
-     'WebimChat' => ['WebimChat/**/*.xib'],
+       'WebimChat' => ['WebimChat/**/*.png'],
+       'WebimChat' => ['WebimChat/**/*.xib'],
+       'WebimChat' => ['WebimChat/**/*.ttf'],
    }
+   s.resources = "WebimChat/**/*.{ttf}"
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

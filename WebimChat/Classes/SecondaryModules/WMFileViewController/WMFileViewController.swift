@@ -35,7 +35,7 @@ class WMFileViewController: UIViewController, WKUIDelegate, WKNavigationDelegate
         self.present(ac, animated: true)
         ac.completionWithItemsHandler = { type, bool, _, error in
             if bool && (type == .saveToCameraRoll || type == .saveToFile) {
-                let saveView = WMSaveView.loadXibView(forClass: WMSaveView.self, forResource: "WMSaveView")
+                let saveView = WMSaveView.loadXibView(forClass: WMSaveView.self)
                 self.view.addSubview(saveView)
                 saveView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
                 saveView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -149,6 +149,6 @@ class WMFileViewController: UIViewController, WKUIDelegate, WKNavigationDelegate
 extension WMFileViewController: TopHeaderViewDelegate {
     
     func backButtonDidPress() {
-//        BaseRouteContex().back()
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -43,7 +43,7 @@ class WMQuoteFileCell: FileMessage {
             resetFileStatus()
         case .sending:
             self.fileDescription?.text = "Sending".localized
-            self.fileStatus.setBackgroundImage( UIImage(named: "FileDownloadButton")!, for: .normal )
+            self.fileStatus.setBackgroundImage(UIImage.chatImageWith(named: "FileDownloadButton"), for: .normal)
             self.fileStatus.isUserInteractionEnabled = false
         }
     }

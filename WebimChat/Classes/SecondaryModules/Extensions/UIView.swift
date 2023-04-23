@@ -99,7 +99,7 @@ extension UIView {
         return nib.instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
     
-    static func loadXibView(forClass: AnyClass, forResource: String) -> Self {
+    static func loadXibView(forClass: AnyClass) -> Self {
         let identifier = "\(Self.self)"
         let bundle = Bundle(for: forClass)
         let nib = UINib(nibName: identifier, bundle: bundle)

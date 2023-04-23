@@ -1,62 +1,36 @@
-//
-//  ImageConstants.swift
-//  WebimClientLibrary_Example
-//
-//  Created by Eugene Ilyin on 15.10.2019.
-//  Copyright © 2019 Webim. All rights reserved.
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in all
-//  copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-//  SOFTWARE.
-//
-
 import Foundation
 import UIKit
 
 // ChatTableViewController.swift
-let documentFileStatusImageViewImage = #imageLiteral(resourceName: "FileDownloadError")
+let documentFileStatusImageViewImage = UIImage.chatImageWith(named: "FileDownloadError") ?? UIImage()
 let leadingSwipeActionImage =
     UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ?
-        #imageLiteral(resourceName: "ReplyCircleToTheLeft") :
-        #imageLiteral(resourceName: "ReplyCircleToTheLeft").flipImage(.horizontally)
+        UIImage.chatImageWith(named: "ReplyCircleToTheLeft") ?? UIImage() :
+        UIImage.chatImageWith(named: "ReplyCircleToTheLeft")?.flipImage(.horizontally) ?? UIImage()
 let trailingSwipeActionImage =
     UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ?
-        #imageLiteral(resourceName: "ReplyCircleToTheLeft").flipImage(.horizontally) :
-        #imageLiteral(resourceName: "ReplyCircleToTheLeft")
+        UIImage.chatImageWith(named: "ReplyCircleToTheLeft")?.flipImage(.horizontally) ?? UIImage() :
+        UIImage.chatImageWith(named: "ReplyCircleToTheLeft") ?? UIImage()
 
 // ImageViewController.swift
-let saveImageButtonImage = #imageLiteral(resourceName: "ImageDownload")
-let fileShare = #imageLiteral(resourceName: "FileShare")
+let saveImageButtonImage = UIImage.chatImageWith(named: "ImageDownload") ?? UIImage()
+let fileShare = UIImage.chatImageWith(named: "FileShare") ?? UIImage()
 
 
 // FlexibleTableViewCell.swift
-let documentFileStatusButtonDownloadOperator = #imageLiteral(resourceName: "FileDownloadButtonOperator")
-let documentFileStatusButtonDownloadVisitor = #imageLiteral(resourceName: "FileDownloadButtonVisitor")
-let documentFileStatusButtonDownloadError = #imageLiteral(resourceName: "FileDownloadError")
-let documentFileStatusButtonDownloadSuccessOperator = #imageLiteral(resourceName: "FileDownloadSuccessOperator")
-let documentFileStatusButtonDownloadSuccessVisitor = #imageLiteral(resourceName: "FIleDownloadSeccessVisitor")
-let documentFileStatusButtonUploadVisitor = #imageLiteral(resourceName: "FileUploadButtonVisitor.pdf")
+let documentFileStatusButtonDownloadOperator = UIImage.chatImageWith(named: "FileDownloadButtonOperator") ?? UIImage()
+let documentFileStatusButtonDownloadVisitor = UIImage.chatImageWith(named: "FileDownloadButtonVisitor") ?? UIImage()
+let documentFileStatusButtonDownloadError = UIImage.chatImageWith(named: "FileDownloadError") ?? UIImage()
+let documentFileStatusButtonDownloadSuccessOperator = UIImage.chatImageWith(named: "FileDownloadSuccessOperator") ?? UIImage()
+let documentFileStatusButtonDownloadSuccessVisitor = UIImage.chatImageWith(named: "FIleDownloadSeccessVisitor") ?? UIImage()
+let documentFileStatusButtonUploadVisitor = UIImage.chatImageWith(named: "FileUploadButtonVisitor.pdf") ?? UIImage()
 
 // PopupActionTableViewCell.swift
-let replyImage = #imageLiteral(resourceName: "ActionReply")
-let copyImage = #imageLiteral(resourceName: "ActionCopy")
-let editImage = #imageLiteral(resourceName: "ActionEdit")
-let deleteImage = #imageLiteral(resourceName: "ActionDelete").colour(actionColourDelete)
+let replyImage = UIImage.chatImageWith(named: "ActionReply") ?? UIImage()
+let copyImage = UIImage.chatImageWith(named: "ActionCopy") ?? UIImage()
+let editImage = UIImage.chatImageWith(named: "ActionEdit") ?? UIImage()
+let deleteImage = UIImage.chatImageWith(named: "ActionDelete")?.colour(actionColourDelete) ?? UIImage()
 
 // SurveyRadioButtonViewController.swift
-let selectedSurveyPoint = #imageLiteral(resourceName: "selectedSurveyPoint")
-let unselectedSurveyPoint = #imageLiteral(resourceName: "unselectedSurveyPoint")
+let selectedSurveyPoint = UIImage.chatImageWith(named: "selectedSurveyPoint") ?? UIImage()
+let unselectedSurveyPoint = UIImage.chatImageWith(named: "unselectedSurveyPoint") ?? UIImage()

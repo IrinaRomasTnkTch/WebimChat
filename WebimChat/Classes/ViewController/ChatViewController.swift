@@ -29,6 +29,8 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
     private var visibleRows = [IndexPath]()
     private var scrollToBottom = false
     
+    private var backButtonDidPressComplition: (() -> ())?
+    
     var rateStarsViewController: RateStarsViewController?
     var surveyCommentViewController: SurveyCommentViewController?
     var surveyRadioButtonViewController: SurveyRadioButtonViewController?
@@ -52,7 +54,6 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
 
     let webimServerSideSettingsManager = WebimServerSideSettingsManager()
     lazy var messageCounter = MessageCounter(delegate: self)
-//    lazy var navigationControllerManager = NavigationControllerManager()
     
     // MARK: - Constraints
     let buttonWidthHeight: CGFloat = 20
@@ -70,11 +71,10 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
 
     // MARK: - Subviews
     // Scroll button
-    lazy var scrollButtonView: ScrollButtonView = ScrollButtonView.loadXibView(forClass: ScrollButtonView.self, forResource: "ScrollButtonView")
+    lazy var scrollButtonView: ScrollButtonView = ScrollButtonView.loadXibView(forClass: ScrollButtonView.self)
 
-    lazy var thanksView = WMThanksAlertView.loadXibView(forClass: WMThanksAlertView.self, forResource: "WMThanksAlertView")
-    lazy var connectionErrorView = ConnectionErrorView.loadXibView(forClass: ConnectionErrorView.self, forResource: "ConnectionErrorView")
-//    lazy var chatTestView = ChatTestView.loadXibView()
+    lazy var thanksView = WMThanksAlertView.loadXibView(forClass: WMThanksAlertView.self)
+    lazy var connectionErrorView = ConnectionErrorView.loadXibView(forClass: ConnectionErrorView.self)
     
 
     // HelpersViews
@@ -98,6 +98,25 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
     func showToolbarWithHeight(_ height: CGFloat) {}
 
     // MARK: - View Life Cycle
+    public init(accountName: String, location: String, profile: ProfileEntity?, backButtonDidPressComplition: (()->())?) {
+        self.backButtonDidPressComplition = backButtonDidPressComplition
+        let identifier = "\(Self.self)"
+        let bundle = Bundle(for: ChatViewController.self)
+        super.init(nibName: identifier, bundle: bundle)
+        
+        loadFonts()
+        
+        WebimServiceController.shared.initialize(accountName: accountName, location: location, profile: profile)
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         configureNetworkErrorView()
@@ -112,9 +131,6 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
 
         setupRefreshControl()
 
-//        if true {
-//            setupTestView()
-//        }
         configureNotifications()
         setupServerSideSettingsManager()
     }
@@ -241,15 +257,14 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
     
     @objc
     func updateOperatorInfo(operatorName: String, operatorAvatarURL: String, titleViewOperatorInfo: String, titleViewOperatorTitle: String ) {
-//        chatTestView.setupOperatorInfo(titleViewOperatorTitle: titleViewOperatorTitle, titleViewOperatorInfo: titleViewOperatorInfo)
         DispatchQueue.main.async {
 
             self.headerView.titleLabel.text = operatorName
             
             if operatorAvatarURL == OperatorAvatar.empty.rawValue {
-                self.headerView.avatarImageView.image = UIImage(named: "Avatar")
+                self.headerView.avatarImageView.image = UIImage.chatImageWith(named: "Avatar")
             } else if operatorAvatarURL == OperatorAvatar.placeholder.rawValue {
-                self.headerView.avatarImageView.image = UIImage(named: "Avatar")
+                self.headerView.avatarImageView.image = UIImage.chatImageWith(named: "Avatar")
             } else {
                 guard let url = URL(string: operatorAvatarURL) else { return }
                 
@@ -261,7 +276,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
                 imageDownloadIndicator.translatesAutoresizingMaskIntoConstraints = false
                 
                 let loadingOptions = ImageLoadingOptions(
-                    placeholder: UIImage(named: "Avatar"),
+                    placeholder: UIImage.chatImageWith(named: "Avatar"),
                     transition: .fadeIn(duration: 0.5)
                 )
                 let defaultRequestOptions = ImageRequestOptions()
@@ -872,6 +887,6 @@ extension ChatViewController: MessageCounterDelegate {
 extension ChatViewController: TopHeaderViewDelegate {
     
     func backButtonDidPress() {
-//        BaseRouteContex().back()
+        backButtonDidPressComplition?()
     }
 }

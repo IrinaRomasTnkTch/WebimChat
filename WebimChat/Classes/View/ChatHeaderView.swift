@@ -5,14 +5,14 @@ class ChatHeaderView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "arrow_back_ios-24px")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.setImage(UIImage.chatImageWith(named: "arrow_back_ios-24px")?.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = AppColor.onSurfaceP2High.getColor()
         return button
     }()
     
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Avatar")
+        imageView.image = UIImage.chatImageWith(named: "Avatar")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 16

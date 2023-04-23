@@ -22,6 +22,9 @@
 		0B994CDC79B1AD3A7BE62490D27C60C8 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3167E063410900E26B5D429FF32B9 /* ConstraintAttributes.swift */; };
 		0D7473A685F040C5C488719F78B59421 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BE344E0A501E07FA1FD1B3B26A6B6 /* DataLoader.swift */; };
 		0EAB8E47B1567F6E4E37A13DDD4E67D0 /* SurveyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225846AFC3408A34D88FAC2B21F92336 /* SurveyItem.swift */; };
+		0F143CFC29EEF14F00C75004 /* PT Root UI_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F143CFA29EEF14F00C75004 /* PT Root UI_Bold.ttf */; };
+		0F143CFF29EEF1A100C75004 /* PT Root UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F143CFE29EEF1A100C75004 /* PT Root UI_Medium.ttf */; };
+		0F143D0129EEFDEF00C75004 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F143D0029EEFDEF00C75004 /* Bundle.swift */; };
 		0F29281F29E824EF0085C019 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA6DD29E6B3B1007207D2 /* AppColor.swift */; };
 		0F29282029E824EF0085C019 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA6DF29E6B51A007207D2 /* AppStyle.swift */; };
 		0F29282129E824EF0085C019 /* AppStyleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA6E529E6C8E2007207D2 /* AppStyleText.swift */; };
@@ -191,7 +194,8 @@
 		0F2928C529E8257B0085C019 /* ChatViewController.strings in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA6C729E5DAB8007207D2 /* ChatViewController.strings */; };
 		0F2928C629E8257B0085C019 /* ChatViewController.strings in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA6CA29E5DAB8007207D2 /* ChatViewController.strings */; };
 		0F2928C729E83B6F0085C019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F571E5729C0F77F00D71809 /* Assets.xcassets */; };
-		0F2928C829E83B810085C019 /* WebimChat-WebimChat in Resources */ = {isa = PBXBuildFile; fileRef = E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat-WebimChat */; };
+		0F2928C829E83B810085C019 /* WebimChat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat.bundle */; };
+		0F56A87429E99C6200B6487B /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56A87329E99C6200B6487B /* UIFont.swift */; };
 		10568C1FE68782D4880E31646E578506 /* Collation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446AA5584039182230CD8BDF40F813C6 /* Collation.swift */; };
 		1058D0FE5340B9296EB9E93BC68B86FD /* WebimNotFatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25779B86951328CEE5867C0C989382 /* WebimNotFatalError.swift */; };
 		10F863301DCC8EEC1D47C29C3D3911B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B68540C55CA43970CDF0C24725F02FA /* CoreGraphics.framework */; };
@@ -496,6 +500,9 @@
 		0E1F2A4E4919721B73251C0700522B85 /* ImagePreheater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePreheater.swift; path = Sources/ImagePreheater.swift; sourceTree = "<group>"; };
 		0E50C92EF9AE6F72B4864EFF1A37878D /* String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = String.swift; path = WebimClientLibrary/Backend/Utilities/Extensions/String.swift; sourceTree = "<group>"; };
 		0ED3DE02862C4E718A55F3CD026F5BE8 /* Nuke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.release.xcconfig; sourceTree = "<group>"; };
+		0F143CFA29EEF14F00C75004 /* PT Root UI_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Bold.ttf"; sourceTree = "<group>"; };
+		0F143CFE29EEF1A100C75004 /* PT Root UI_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Medium.ttf"; sourceTree = "<group>"; };
+		0F143D0029EEFDEF00C75004 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		0F1F228B29E80472002B9165 /* StarsButtonsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarsButtonsView.xib; sourceTree = "<group>"; };
 		0F1F228C29E80472002B9165 /* StarsButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarsButtonsView.swift; sourceTree = "<group>"; };
 		0F3BA51F29E5D899007207D2 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -692,6 +699,7 @@
 		0F3BA6E329E6C7BF007207D2 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		0F3BA6E529E6C8E2007207D2 /* AppStyleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyleText.swift; sourceTree = "<group>"; };
 		0F3BA6E729E6CCE6007207D2 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
+		0F56A87329E99C6200B6487B /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0F571E5729C0F77F00D71809 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = WebimChat/Assets.xcassets; sourceTree = "<group>"; };
 		0FE0B6369E3AC4F7765892DC8338E57C /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		120501B6F6636A38ACF05FEFEF139DFA /* DeltaResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeltaResponse.swift; path = WebimClientLibrary/Backend/Items/Responses/DeltaResponse.swift; sourceTree = "<group>"; };
@@ -918,7 +926,7 @@
 		DF58142B9FB629F9E76D2878E911B694 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Sources/SQLite/Helpers.swift; sourceTree = "<group>"; };
 		E23B6D0913F3D69E980FBC5825FF16D7 /* SQLite.swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SQLite.swift.debug.xcconfig; sourceTree = "<group>"; };
 		E3E3167E063410900E26B5D429FF32B9 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Sources/ConstraintAttributes.swift; sourceTree = "<group>"; };
-		E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat-WebimChat */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "WebimChat-WebimChat"; path = WebimChat.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebimChat.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F297FF2DDE6612B3572835A8D7E516 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewExtensions.swift; path = Sources/ImageViewExtensions.swift; sourceTree = "<group>"; };
 		E7EBECE618330845C1B27E0340AE79D4 /* FAQCategoryInfoItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FAQCategoryInfoItem.swift; path = WebimClientLibrary/Backend/Items/FAQCategoryInfoItem.swift; sourceTree = "<group>"; };
 		E8BFA2C1004F544CBB8A0D1AD248AD2D /* MessageStreamImpl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageStreamImpl.swift; path = WebimClientLibrary/Implementation/MessageStreamImpl.swift; sourceTree = "<group>"; };
@@ -1041,6 +1049,16 @@
 			path = "../Target Support Files/SQLite.swift";
 			sourceTree = "<group>";
 		};
+		0F143CF529EEEBE300C75004 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0F143CFA29EEF14F00C75004 /* PT Root UI_Bold.ttf */,
+				0F143CFE29EEF1A100C75004 /* PT Root UI_Medium.ttf */,
+			);
+			name = Fonts;
+			path = WebimChat/Fonts;
+			sourceTree = "<group>";
+		};
 		0F1F228A29E80472002B9165 /* StarsButtonsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1099,10 +1117,12 @@
 				0F3BA6E329E6C7BF007207D2 /* Date.swift */,
 				0F3BA53729E5D89A007207D2 /* Message.swift */,
 				0F3BA54029E5D89A007207D2 /* NotificationCenter+Extensions.swift */,
+				0F3BA6E729E6CCE6007207D2 /* NSMutableAttributedString.swift */,
 				0F3BA53C29E5D89A007207D2 /* NSRange.swift */,
 				0F3BA53B29E5D89A007207D2 /* String.swift */,
 				0F3BA54329E5D89A007207D2 /* UIActivityType.swift */,
 				0F3BA53D29E5D89A007207D2 /* UIButton.swift */,
+				0F56A87329E99C6200B6487B /* UIFont.swift */,
 				0F3BA53E29E5D89A007207D2 /* UIImage.swift */,
 				0F3BA54229E5D89A007207D2 /* UINavigationController.swift */,
 				0F3BA53529E5D89A007207D2 /* UIStackView.swift */,
@@ -1112,7 +1132,7 @@
 				0F3BA53429E5D89A007207D2 /* UIView.swift */,
 				0F3BA53F29E5D89A007207D2 /* UIViewController.swift */,
 				0F3BA53829E5D89A007207D2 /* URL+extension.swift */,
-				0F3BA6E729E6CCE6007207D2 /* NSMutableAttributedString.swift */,
+				0F143D0029EEFDEF00C75004 /* Bundle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1849,7 +1869,7 @@
 				979486118B3E90C08386079D57962701 /* SnapKit */,
 				F5FA45A44C42CC2CA3A324A3E914CE19 /* SQLite.swift */,
 				7F52C42B6ECB529FC807647D1454CF78 /* WebimChat.framework */,
-				E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat-WebimChat */,
+				E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat.bundle */,
 				B858A541532E1EC9CCD7F2A6EE508D67 /* WebimClientLibraryUpdated */,
 			);
 			name = Products;
@@ -1888,6 +1908,7 @@
 		DF4C3B12FDB6D431782E784441835592 /* WebimChat */ = {
 			isa = PBXGroup;
 			children = (
+				0F143CF529EEEBE300C75004 /* Fonts */,
 				0F571E5729C0F77F00D71809 /* Assets.xcassets */,
 				BE0BD54F5446E6D20A81CE51D0208262 /* Pod */,
 				F45979CDDCBCE0AE9091DF82D221CB28 /* Resources */,
@@ -2119,7 +2140,7 @@
 			);
 			name = "WebimChat-WebimChat";
 			productName = WebimChat;
-			productReference = E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat-WebimChat */;
+			productReference = E5BBEBC04A33F6FFC7E077FDFE16DFAE /* WebimChat.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		B4F47470E109C4DB186CB4DE0F6B312C /* WebimClientLibraryUpdated */ = {
@@ -2171,6 +2192,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					97737E32DFBD198B15FAB6C4E336C3A6 = {
+						DevelopmentTeam = VMBT3ZKAH9;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2232,8 +2258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F2928C829E83B810085C019 /* WebimChat-WebimChat in Resources */,
+				0F143CFC29EEF14F00C75004 /* PT Root UI_Bold.ttf in Resources */,
+				0F2928C829E83B810085C019 /* WebimChat.bundle in Resources */,
 				0F2928C729E83B6F0085C019 /* Assets.xcassets in Resources */,
+				0F143CFF29EEF1A100C75004 /* PT Root UI_Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2315,9 +2343,11 @@
 				0F29289029E825640085C019 /* WMOperatorFileCell.strings in Sources */,
 				0F29289129E825640085C019 /* WMOperatorFileCell.xib in Sources */,
 				0F29289229E825640085C019 /* WMOperatorFileCell.swift in Sources */,
+				0F56A87429E99C6200B6487B /* UIFont.swift in Sources */,
 				0F29289329E825640085C019 /* WMOperatorMessageCell.strings in Sources */,
 				0F29289429E825640085C019 /* WMOperatorMessageCell.xib in Sources */,
 				0F29289529E825640085C019 /* WMOperatorMessageCell.swift in Sources */,
+				0F143D0129EEFDEF00C75004 /* Bundle.swift in Sources */,
 				0F29289629E825640085C019 /* WMVisitorMessageTableViewCell.strings in Sources */,
 				0F29289729E825640085C019 /* WMOperatorImageCell.swift in Sources */,
 				0F29289829E825640085C019 /* WMOperatorImageCell.strings in Sources */,
@@ -3305,6 +3335,7 @@
 			baseConfigurationReference = 2792405044975AE0BD3770636AE277FD /* WebimChat.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WebimChat";
+				DEVELOPMENT_TEAM = VMBT3ZKAH9;
 				IBSC_MODULE = WebimChat;
 				INFOPLIST_FILE = "Target Support Files/WebimChat/ResourceBundle-WebimChat-WebimChat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -3633,6 +3664,7 @@
 			baseConfigurationReference = 41B202B297204B388936BB9B36DCE622 /* WebimChat.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WebimChat";
+				DEVELOPMENT_TEAM = VMBT3ZKAH9;
 				IBSC_MODULE = WebimChat;
 				INFOPLIST_FILE = "Target Support Files/WebimChat/ResourceBundle-WebimChat-WebimChat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

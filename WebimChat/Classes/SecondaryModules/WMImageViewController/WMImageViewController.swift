@@ -62,7 +62,7 @@ class WMImageViewController: UIViewController {
             }
         } else {
             DispatchQueue.main.async {
-                self.imageView.image = UIImage(named: "image_placeholder")
+                self.imageView.image = UIImage.chatImageWith(named: "image_placeholder")
                 self.imageView.addSubview(self.imageDownloadIndicator)
                 self.imageDownloadIndicator.snp.remakeConstraints { (make) -> Void in
                     make.centerX.equalToSuperview()
@@ -115,7 +115,7 @@ class WMImageViewController: UIViewController {
             // Save error
             alertDialogHandler.showImageSavingFailureDialog(withError: error)
         } else {
-            let saveView = WMSaveView.loadXibView(forClass: WMSaveView.self, forResource: "WMSaveView")
+            let saveView = WMSaveView.loadXibView(forClass: WMSaveView.self)
             self.view.addSubview(saveView)
             saveView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
             saveView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -256,6 +256,6 @@ class WMImageViewController: UIViewController {
 extension WMImageViewController: TopHeaderViewDelegate {
     
     func backButtonDidPress() {
-//        BaseRouteContex().back()
+        navigationController?.popViewController(animated: true)
     }
 }

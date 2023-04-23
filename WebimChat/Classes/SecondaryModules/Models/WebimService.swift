@@ -1,7 +1,7 @@
 import Foundation
 import WebimClientLibraryUpdated
 
-class ProfileEntity {
+public class ProfileEntity {
     var id = 0
     var name: String?
     var surname: String?
@@ -87,13 +87,13 @@ final class WebimService {
     }
 
     // MARK: - Methods
-    func createSession() {
+    func createSession(accountName: String, location: String, profile: ProfileEntity?) {
         
         let deviceToken: String? = WMKeychainWrapper.standard.string(forKey: WMKeychainWrapper.deviceTokenKey)
         
         var sessionBuilder = Webim.newSessionBuilder()
-            .set(accountName: "tanukiru")
-            .set(location: "default")
+            .set(accountName: accountName)
+            .set(location: location)
             .set(pageTitle: Settings.shared.pageTitle)
             .set(fatalErrorHandler: self)
             .set(remoteNotificationSystem: ((deviceToken != nil) ? .apns : .none))
@@ -103,9 +103,9 @@ final class WebimService {
                  verbosityLevel: .verbose,
                  availableLogTypes: [.networkRequest, .messageHistory, .manualCall, .undefined])
         
-//        if let profileData = ProfileManager.shared.profile {
-//            _ = sessionBuilder.set(visitorFieldsJSONData: createUserData(profile: profileData))
-//        }
+        if let profileData = profile {
+            _ = sessionBuilder.set(visitorFieldsJSONData: createUserData(profile: profileData))
+        }
         
         
         if let notFatalErrorHandler = notFatalErrorHandler {

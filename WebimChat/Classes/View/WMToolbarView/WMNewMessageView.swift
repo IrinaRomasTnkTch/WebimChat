@@ -50,7 +50,7 @@ class WMNewMessageView: UIView {
         messageText.isScrollEnabled = true
         messageText.textColor = AppColor.primary2.getColor()
         messageText.font = AppStyleText.bodyMedium.getFont()
-//        messageText.contentInset.left = 10
+        messageText.contentInset.left = 10
         messageText.textContainerInset.right = 40
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 0).cgPath
         self.layer.position = self.center
@@ -62,11 +62,11 @@ class WMNewMessageView: UIView {
         messageText.delegate = self
         
         messagePlaceholder.attributedText = "Текст...".localized().styleBase(.bodyMedium, color: .grey300)
-        fileButton.setImage(UIImage(named: "eva_attach-fill"), for: .normal)
-        sendButton.setImage(UIImage(named: "send_button"), for: .normal)
+        fileButton.setImage(UIImage.chatImageWith(named: "eva_attach-fill"), for: .normal)
+        sendButton.setImage(UIImage.chatImageWith(named: "send_button"), for: .normal)
 
         translatesAutoresizingMaskIntoConstraints = false
-//        recountViewHeight()
+        recountViewHeight()
     }
     
     var textInputTextViewBufferString: String?
