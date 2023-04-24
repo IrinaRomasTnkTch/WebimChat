@@ -2194,7 +2194,7 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					97737E32DFBD198B15FAB6C4E336C3A6 = {
-						DevelopmentTeam = VMBT3ZKAH9;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -3334,12 +3334,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2792405044975AE0BD3770636AE277FD /* WebimChat.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WebimChat";
-				DEVELOPMENT_TEAM = VMBT3ZKAH9;
+				DEVELOPMENT_TEAM = "";
 				IBSC_MODULE = WebimChat;
 				INFOPLIST_FILE = "Target Support Files/WebimChat/ResourceBundle-WebimChat-WebimChat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = WebimChat;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3663,12 +3665,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 41B202B297204B388936BB9B36DCE622 /* WebimChat.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WebimChat";
-				DEVELOPMENT_TEAM = VMBT3ZKAH9;
+				DEVELOPMENT_TEAM = "";
 				IBSC_MODULE = WebimChat;
 				INFOPLIST_FILE = "Target Support Files/WebimChat/ResourceBundle-WebimChat-WebimChat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = WebimChat;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
