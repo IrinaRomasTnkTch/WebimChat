@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebimChat'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'A short description of WebimChat.'
 
 # This description is used to generate tags and improve search results.
@@ -33,9 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'WebimChat/Classes/**/*'
   
    s.resource_bundles = {
-       'WebimChat' => ['WebimChat/**/*.png'],
-       'WebimChat' => ['WebimChat/**/*.xib'],
-       'WebimChat' => ['WebimChat/**/*.ttf'],
+       'WebimChat' => ['WebimChat/**/*.{png, xib, ttf}']
    }
    s.resources = "WebimChat/**/*.{ttf}"
 

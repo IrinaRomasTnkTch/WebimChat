@@ -13,9 +13,9 @@ class WebimServiceController {
     
     private var accountName = "demo"
     private var location = "mobile"
-    private var profile: ProfileEntity?
+    private var profile: WCProfileData?
     
-    func initialize(accountName: String, location: String, profile: ProfileEntity?) {
+    func initialize(accountName: String, location: String, profile: WCProfileData?) {
         self.accountName = accountName
         self.location = location
         self.profile = profile

@@ -1,12 +1,20 @@
 import Foundation
 import WebimClientLibraryUpdated
 
-public class ProfileEntity {
+public class WCProfileData {
     var id = 0
     var name: String?
     var surname: String?
     var phone: String?
     var email: String?
+    
+    public init(id: Int = 0, name: String? = nil, surname: String? = nil, phone: String? = nil, email: String? = nil) {
+        self.id = id
+        self.name = name
+        self.surname = surname
+        self.phone = phone
+        self.email = email
+    }
 }
 
 final class WebimService {
@@ -54,7 +62,7 @@ final class WebimService {
         return webimSession?.getStream().getChatState() ?? .unknown
     }
     
-    func createUserData(profile: ProfileEntity) -> Data {
+    func createUserData(profile: WCProfileData) -> Data {
         let secretString = "2851c56e6945da670b44a179e7c34d94"
         var fields = [String: String]()
         var properties = [String: Any]()
@@ -87,7 +95,7 @@ final class WebimService {
     }
 
     // MARK: - Methods
-    func createSession(accountName: String, location: String, profile: ProfileEntity?) {
+    func createSession(accountName: String, location: String, profile: WCProfileData?) {
         
         let deviceToken: String? = WMKeychainWrapper.standard.string(forKey: WMKeychainWrapper.deviceTokenKey)
         

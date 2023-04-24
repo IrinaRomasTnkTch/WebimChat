@@ -98,7 +98,7 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
     func showToolbarWithHeight(_ height: CGFloat) {}
 
     // MARK: - View Life Cycle
-    public init(accountName: String, location: String, profile: ProfileEntity?, backButtonDidPressComplition: (()->())?) {
+    public init(accountName: String, location: String, profile: WCProfileData?, backButtonDidPressComplition: (()->())?) {
         self.backButtonDidPressComplition = backButtonDidPressComplition
         let identifier = "\(Self.self)"
         let bundle = Bundle(for: ChatViewController.self)
