@@ -8,7 +8,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = .red
         
         
         button.setTitle("Touch", for: .normal)
@@ -16,6 +15,7 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(touchBtn), for: .touchUpInside)
         
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        button.center = view.center
         
         view.addSubview(button)
         

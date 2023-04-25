@@ -17,12 +17,12 @@ WebimChat is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'WebimChat'
+  pod 'WebimChat', :git => 'https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git', :tag => '1.0.0'
 ```
 
 ## Author
 
-Ирина Ромась, romas_i@tanukitech.ru
+Irina Romas, romas_i@tanukitech.ru
 
 ## License
 

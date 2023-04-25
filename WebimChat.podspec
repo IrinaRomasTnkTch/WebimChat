@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebimChat'
-  s.version          = '0.1.10'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of WebimChat.'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Ирина Ромась' => 'romas_i@tanukitech.ru' }
+  s.author           = { 'Irina Romas' => 'romas_i@tanukitech.ru' }
   s.source           = { :git => 'https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
