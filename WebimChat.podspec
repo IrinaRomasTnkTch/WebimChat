@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebimChat'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A short description of WebimChat.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,9 @@ TODO: Add long description of the pod here.
        'WebimChat' => ['WebimChat/**/*.{png, xib, ttf}']
    }
    s.resources = "WebimChat/**/*.{ttf}", "WebimChat/Assets.xcassets"
+   
+   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
