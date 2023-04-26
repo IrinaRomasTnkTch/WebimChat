@@ -11,6 +11,7 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
     private let SPACING_DEFAULT: CGFloat = 10.0
     
     private var buttonsStack = TagButtonsView()
+    private var isCanceled = false
     
     private func emptyTheCell() {
         buttonsStack.removeFromSuperview()
@@ -43,11 +44,13 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
         var isActive = false
         self.time?.isHidden = true
         
+        isCanceled = keyboard.getState() == .canceled
+        
         switch keyboard.getState() {
         case .pending:
             isActive = true
         case .canceled:
-            isActive = false
+            isActive = true
         case .completed:
             isActive = false
             buttonWasSelected()
@@ -141,27 +144,32 @@ class WMBotButtonsTableViewCell: WMMessageTableCell {
     
     @objc
     private func sendButton(sender: UIButton) {
-        let messageID = message.getID()
         guard let title = sender.titleLabel?.text,
               let id = sender.accessibilityIdentifier
         else { return }
-        sender.backgroundColor = buttonChoosenBackgroundColour
-        sender.tintColor = buttonChoosenTitleColour
-        print("Buttton \(title) with tag\\ID \(id) of message \(messageID) was tapped!")
-        let buttonInfoDictionary = [
-            "Message": messageID,
-            "ButtonID": id,
-            "ButtonTitle": title
-        ]
-        sendKeyboardRequest(keyboardRequest: buttonInfoDictionary)
+        if isCanceled {
+            WebimServiceController.currentSession.send(message: title)
+        } else {
+            let messageID = message.getID()
+            sender.backgroundColor = buttonChoosenBackgroundColour
+            sender.tintColor = buttonChoosenTitleColour
+            print("Buttton \(title) with tag\\ID \(id) of message \(messageID) was tapped!")
+            let buttonInfoDictionary = [
+                "Message": messageID,
+                "ButtonID": id,
+                "ButtonTitle": title
+            ]
+            sendKeyboardRequest(keyboardRequest: buttonInfoDictionary)
+            
+            UIView.animate(withDuration: 1,
+                           animations: { [weak self] in
+                self?.messageView.alpha = 1
+                self?.buttonView.alpha = 0
+            }, completion: { (finished: Bool) in
+                self.buttonWasSelected()
+            })
+        }
         
-        UIView.animate(withDuration: 1,
-                       animations: { [weak self] in
-            self?.messageView.alpha = 1
-            self?.buttonView.alpha = 0
-        }, completion: { (finished: Bool) in
-            self.buttonWasSelected()
-        })
     }
 }
 

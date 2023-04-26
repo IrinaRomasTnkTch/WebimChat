@@ -17,7 +17,7 @@ WebimChat is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-  pod 'WebimChat', :git => 'https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git', :tag => '1.0.0'
+  pod 'WebimChat', :git => 'https://gitlab.tanuki.ru/tanuki-family-ios/webimchat.git', :tag => '1.0.2'
 ```
 
 ## Author
