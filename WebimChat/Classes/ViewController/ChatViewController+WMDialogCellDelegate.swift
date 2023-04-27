@@ -27,7 +27,7 @@ extension ChatViewController: WMDialogCellDelegate {
                 message.getServerSideID() == messageId
             }) else { return }
             let indexPath = IndexPath(row: row, section: 0)
-            chatTableView.scrollToRow(at: indexPath, at: .middle, animated: false)
+            chatTableView.scrollToRowSafe(at: indexPath, at: .middle, animated: false)
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                 self.chatTableView.cellForRow(at: indexPath)?.contentView.backgroundColor = quoteBodyLabelColourVisitor
             }, completion: { _ in

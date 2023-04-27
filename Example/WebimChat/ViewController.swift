@@ -28,8 +28,7 @@ class ViewController: UIViewController {
     }
     
     @objc func touchBtn() {
-        let profileData = WCProfileData(id: 0, name: "Name", surname: "Nemov", phone: "79555555555", email: nil)
-        let chat = ChatViewController(accountName: "demo", location: "mobile", profile: profileData, backButtonDidPressComplition: { [weak self] in
+        let chat = ChatViewController(accountName: "demo", location: "mobile", profile: nil, backButtonDidPressComplition: { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         })
         navigationController?.pushViewController(chat, animated: true)
