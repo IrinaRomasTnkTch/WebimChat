@@ -99,7 +99,6 @@
 		0F29286629E825420085C019 /* WMSaveView.strings in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA54C29E5D89A007207D2 /* WMSaveView.strings */; };
 		0F29286729E825420085C019 /* WMSaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA54E29E5D89A007207D2 /* WMSaveView.swift */; };
 		0F29286829E825420085C019 /* WMSaveView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA54F29E5D89A007207D2 /* WMSaveView.xib */; };
-		0F29286929E8254F0085C019 /* StarsButtonsView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0F1F228B29E80472002B9165 /* StarsButtonsView.xib */; };
 		0F29286A29E8254F0085C019 /* StarsButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1F228C29E80472002B9165 /* StarsButtonsView.swift */; };
 		0F29286B29E8254F0085C019 /* ConnectionErrorView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA66729E5DAA6007207D2 /* ConnectionErrorView.xib */; };
 		0F29286C29E8254F0085C019 /* WMFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3BA5F229E5DAA6007207D2 /* WMFileTableViewCell.swift */; };
@@ -503,7 +502,6 @@
 		0F143CFA29EEF14F00C75004 /* PT Root UI_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Bold.ttf"; sourceTree = "<group>"; };
 		0F143CFE29EEF1A100C75004 /* PT Root UI_Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT Root UI_Medium.ttf"; sourceTree = "<group>"; };
 		0F143D0029EEFDEF00C75004 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		0F1F228B29E80472002B9165 /* StarsButtonsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarsButtonsView.xib; sourceTree = "<group>"; };
 		0F1F228C29E80472002B9165 /* StarsButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarsButtonsView.swift; sourceTree = "<group>"; };
 		0F3BA51F29E5D899007207D2 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		0F3BA52029E5D899007207D2 /* ColourConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourConstants.swift; sourceTree = "<group>"; };
@@ -1062,7 +1060,6 @@
 		0F1F228A29E80472002B9165 /* StarsButtonsView */ = {
 			isa = PBXGroup;
 			children = (
-				0F1F228B29E80472002B9165 /* StarsButtonsView.xib */,
 				0F1F228C29E80472002B9165 /* StarsButtonsView.swift */,
 			);
 			path = StarsButtonsView;
@@ -2194,6 +2191,7 @@
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					97737E32DFBD198B15FAB6C4E336C3A6 = {
+						DevelopmentTeam = VMBT3ZKAH9;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -2395,7 +2393,6 @@
 				0F2928C229E825650085C019 /* ChatViewController+UITableView.swift in Sources */,
 				0F2928C329E825650085C019 /* ChatViewController+WMDialogCellDelegate.swift in Sources */,
 				0F2928C429E825650085C019 /* ChatViewController+WMDialogPopoverDelegate.swift in Sources */,
-				0F29286929E8254F0085C019 /* StarsButtonsView.xib in Sources */,
 				0F29286A29E8254F0085C019 /* StarsButtonsView.swift in Sources */,
 				0F29286B29E8254F0085C019 /* ConnectionErrorView.xib in Sources */,
 				0F29286C29E8254F0085C019 /* WMFileTableViewCell.swift in Sources */,
@@ -3337,6 +3334,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WebimChat";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VMBT3ZKAH9;
 				IBSC_MODULE = WebimChat;
 				INFOPLIST_FILE = "Target Support Files/WebimChat/ResourceBundle-WebimChat-WebimChat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -3669,6 +3667,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WebimChat";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VMBT3ZKAH9;
 				IBSC_MODULE = WebimChat;
 				INFOPLIST_FILE = "Target Support Files/WebimChat/ResourceBundle-WebimChat-WebimChat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
