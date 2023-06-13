@@ -29,6 +29,7 @@ class RateStarsViewController: WMSurveyViewController {
     private func setupSubviews() {
         
         backgroundView.layer.cornerRadius = 8
+        starsButtonsView.backgroundColor = .clear
         
         let text = isSurvey ? descriptionText : "Пожалуйста, оцените работу оператора".localized
         descriptionLabel.attributedText = text?.styleBase(.bodyBold, color: .primary2)

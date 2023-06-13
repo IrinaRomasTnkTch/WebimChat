@@ -95,7 +95,7 @@ extension ChatViewController {
     private func showRateStars(operatorId: String, isSurvey: Bool, description: String) {
         DispatchQueue.main.async {
             
-            let vc = RateStarsViewController()
+            let vc = RateStarsViewController.loadViewControllerFromXib(bundle: RateStarsViewController.self)
             vc.delegate = self
             vc.rateOperatorDelegate = self
             self.rateStarsViewController = vc
