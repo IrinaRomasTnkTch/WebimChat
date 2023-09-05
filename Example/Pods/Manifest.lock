@@ -4,7 +4,7 @@ PODS:
   - SQLite.swift (0.13.3):
     - SQLite.swift/standard (= 0.13.3)
   - SQLite.swift/standard (0.13.3)
-  - WebimChat (0.1.7):
+  - WebimChat (1.0.6):
     - Nuke (~> 8.0)
     - SnapKit (~> 5.6.0)
     - WebimClientLibraryUpdated (~> 3.38.3)
@@ -30,9 +30,9 @@ SPEC CHECKSUMS:
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLite.swift: 903bfa3bc9ab06345fdfbb578e34f47cfcf417da
-  WebimChat: 5630a02362591f0b08c548344fa532360f67f1e2
+  WebimChat: 1934d493f73fbab2ea7e604ecb80db00ea0ecf2c
   WebimClientLibraryUpdated: d0f581970823e165ca4bc94f06d18ea00d50e6cc
 
 PODFILE CHECKSUM: dd6bade57a2034d68488cbcd92a067a8dd47bb57
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
