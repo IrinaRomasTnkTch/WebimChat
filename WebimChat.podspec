@@ -47,5 +47,5 @@ TODO: Add long description of the pod here.
   # s.dependency 'AFNetworking', '~> 2.3'
    s.dependency 'Nuke', '~> 8.0'
    s.dependency 'SnapKit', '~> 5.6.0'
-   s.dependency 'WebimClientLibraryUpdated', '~> 3.38.4'
+   s.dependency 'WebimClientLibraryUpdated', '~> 3.38.5'
 end

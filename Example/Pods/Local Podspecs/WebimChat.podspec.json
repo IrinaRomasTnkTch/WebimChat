@@ -44,7 +44,7 @@
       "~> 5.6.0"
     ],
     "WebimClientLibraryUpdated": [
-      "~> 3.38.4"
+      "~> 3.38.5"
     ]
   },
   "swift_version": "5.0"
