@@ -46,7 +46,6 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
                 toolbarView.messageView.fileButton.isEnabled = isEnabled
             }
         }
-        }
     }
     
     var searchMessages = [Message]()
