@@ -40,6 +40,12 @@ public class ChatViewController: UIViewController, WMToolbarBackgroundViewDelega
             if newValue.count != chatMessages.count {
                 canReloadRows = false
             }
+            if webimServerSideSettingsManager.disablingMessageInputField() {
+                let isEnabled = newValue.last?.getType() != .keyboard
+                toolbarView.messageView.messageText.isEditable = isEnabled
+                toolbarView.messageView.fileButton.isEnabled = isEnabled
+            }
+        }
         }
     }
     

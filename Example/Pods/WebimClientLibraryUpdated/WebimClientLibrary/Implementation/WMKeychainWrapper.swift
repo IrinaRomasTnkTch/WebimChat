@@ -46,18 +46,18 @@ public class WMKeychainWrapper: NSObject {
             return
         }
         inited = true
-        UserDefaults.standard.removeObject(forKey: "fileGuidURLDictionaryKey")
-        UserDefaults.standard.removeObject(forKey: "ru.webim.WebimClientSDKiOS.guid")
-        UserDefaults.standard.removeObject(forKey: "settings")
-        UserDefaults.standard.removeObject(forKey: "previous_account")
-        UserDefaults.standard.removeObject(forKey: "device-token")
-        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+        CTTData.standard.removeObject(forKey: "fileGuidURLDictionaryKey")
+        CTTData.standard.removeObject(forKey: "ru.webim.WebimClientSDKiOS.guid")
+        CTTData.standard.removeObject(forKey: "settings")
+        CTTData.standard.removeObject(forKey: "previous_account")
+        CTTData.standard.removeObject(forKey: "device-token")
+        for key in CTTData.standard.dictionaryRepresentation().keys {
             if key.starts(with: "ru.webim.WebimClientSDKiOS") {
-                UserDefaults.standard.removeObject(forKey: key)
+                CTTData.standard.removeObject(forKey: key)
             }
         }
         
-        let userDefaults = UserDefaults.standard
+        let userDefaults = CTTData.standard
         if !userDefaults.bool(forKey: webimUserDefaultsFirstRunKey) {
             userDefaults.set(true, forKey: webimUserDefaultsFirstRunKey)
             

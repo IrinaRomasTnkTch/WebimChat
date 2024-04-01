@@ -4,11 +4,11 @@ PODS:
   - SQLite.swift (0.13.3):
     - SQLite.swift/standard (= 0.13.3)
   - SQLite.swift/standard (0.13.3)
-  - WebimChat (0.1.7):
+  - WebimChat (1.0.6):
     - Nuke (~> 8.0)
     - SnapKit (~> 5.6.0)
-    - WebimClientLibraryUpdated (~> 3.38.3)
-  - WebimClientLibraryUpdated (3.38.3):
+    - WebimClientLibraryUpdated (~> 3.38.5)
+  - WebimClientLibraryUpdated (3.38.5):
     - SQLite.swift (= 0.13.3)
 
 DEPENDENCIES:
@@ -16,11 +16,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - SQLite.swift
-    - WebimClientLibraryUpdated
-  trunk:
     - Nuke
     - SnapKit
+    - SQLite.swift
+    - WebimClientLibraryUpdated
 
 EXTERNAL SOURCES:
   WebimChat:
@@ -30,9 +29,9 @@ SPEC CHECKSUMS:
   Nuke: d780e3507a86b86c589ab3cc5cd302d5456f06fb
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SQLite.swift: 903bfa3bc9ab06345fdfbb578e34f47cfcf417da
-  WebimChat: 5630a02362591f0b08c548344fa532360f67f1e2
-  WebimClientLibraryUpdated: d0f581970823e165ca4bc94f06d18ea00d50e6cc
+  WebimChat: 44ba3338d4bba32cb3fdc2f24026a56d77ab591e
+  WebimClientLibraryUpdated: 1cf247fe42eea4be7264311561d4e0c7c59434ba
 
-PODFILE CHECKSUM: dd6bade57a2034d68488cbcd92a067a8dd47bb57
+PODFILE CHECKSUM: f7f0e9efdc164a8d94cd4c97e4954d176e98980f
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1

@@ -18,13 +18,13 @@ class WMTestManager: NSObject {
     private static let userDefaultsTestModeEnabledKey = WMKeychainWrapper.webimKeyPrefix + "userDefaultsTestModeEnabledKey"
     
     static func toogleTestMode() -> Bool {
-        let boolValue = !UserDefaults.standard.bool(forKey: userDefaultsTestModeEnabledKey)
-        UserDefaults.standard.set(boolValue, forKey: userDefaultsTestModeEnabledKey)
+        let boolValue = !CTTData.standard.bool(forKey: userDefaultsTestModeEnabledKey)
+        CTTData.standard.set(boolValue, forKey: userDefaultsTestModeEnabledKey)
         return boolValue
     }
     
     static func testModeEnabled() -> Bool {
-        return UserDefaults.standard.bool(forKey: userDefaultsTestModeEnabledKey)
+        return CTTData.standard.bool(forKey: userDefaultsTestModeEnabledKey)
     }
     
     private static func createTestDialogActionsArray() -> [WMTestDialogAction] {
