@@ -15,7 +15,7 @@ class WMNewMessageView: UIView {
     weak var delegate: WMNewMessageViewDelegate?
     
     @IBOutlet var sendButton: UIButton!
-    @IBOutlet private var fileButton: UIButton!
+    @IBOutlet var fileButton: UIButton!
     @IBOutlet private var messagePlaceholder: UILabel!
     @IBOutlet var messageText: UITextView!
     

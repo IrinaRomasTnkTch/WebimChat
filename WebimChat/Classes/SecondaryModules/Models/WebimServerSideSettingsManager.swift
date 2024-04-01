@@ -22,6 +22,13 @@ class WebimServerSideSettingsManager {
         }
         return isMessageEditEnabled
     }
+    
+    func disablingMessageInputField() -> Bool {
+        guard let disablingMessageInputField = webimServerSideSettings?.accountConfig.disablingMessageInputField else {
+            return false
+        }
+        return disablingMessageInputField
+    }
 }
 
 extension WebimServerSideSettingsManager: ServerSideSettingsCompletionHandler {

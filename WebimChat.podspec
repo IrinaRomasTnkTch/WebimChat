@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WebimChat'
-  s.version          = '1.0.6'
+  s.version          = '1.1.0'
   s.summary          = 'A short description of WebimChat.'
 
 # This description is used to generate tags and improve search results.
@@ -47,5 +47,5 @@ TODO: Add long description of the pod here.
   # s.dependency 'AFNetworking', '~> 2.3'
    s.dependency 'Nuke', '~> 8.0'
    s.dependency 'SnapKit', '~> 5.6.0'
-   s.dependency 'WebimClientLibraryUpdated', '~> 3.38.5'
+   s.dependency 'WebimClientLibraryUpdated', '~> 3.38.6'
 end
